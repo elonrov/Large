@@ -1,7 +1,7 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS } from '../actions/session_actions';
 import { OPEN_MODAL } from '../actions/modal_actions';
 
-const sessionsErrorsReducer = (state = [], action) => {
+const sessionErrorsReducer = (state = [], action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_SESSION_ERRORS:
@@ -15,4 +15,4 @@ const sessionsErrorsReducer = (state = [], action) => {
     }
 };
 
-export default sessionsErrorsReducer;
+export default sessionErrorsReducer;
