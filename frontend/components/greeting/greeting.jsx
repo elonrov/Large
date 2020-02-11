@@ -22,7 +22,6 @@ const Greeting = ({currentUser, logout, openModal}) => {
     return (
         currentUser ? (
             <header>
-                <h3>Hello, {currentUser.username}</h3>
                 <Link to="/stories/new">Write</Link>
                 <button onClick={logout}>Sign out</button>
             </header>
