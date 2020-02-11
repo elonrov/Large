@@ -9,8 +9,7 @@ const App = () => {
         <div>
             <Modal />
             <header>
-                {/* <h1>Large</h1> */}
-                <GreetingContainer />
+                <GreetingContainer />                
             </header>
         </div>
     )

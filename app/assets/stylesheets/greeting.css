@@ -1,0 +1,67 @@
+
+.nav-1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    /* padding: 5px; */
+    height: 60px;
+    position: fixed; 
+    top: 10px; 
+    width: 100%;
+    line-height: 1px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    padding-left: 25px;
+    color: black; 
+    font-size: 42px;
+}
+
+.nav-buttons {
+    padding-top: 9px;
+    padding-right: 25px; 
+}
+
+.nav-buttons, .nav-1-login, .nav-1-signup, .user-profile-icon, .nav-1-signout {
+    padding-left: 15px;
+    border-radius: 4px;
+    height: 40px;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 16px;
+}
+
+.nav-1-login {
+    background-color: white; 
+    margin: 5px; 
+    width: 150px;
+    border: none; 
+}
+
+.nav-1-signup {
+    background-color: #3aab78;
+    margin: 5px;
+    width: 150px;
+    color: white;
+}
+
+.user-profile-icon {
+    background-color: #3aab78;
+    border-radius: 50%; 
+    width: 50px;
+    height: 50px; 
+    display: flex; 
+    color: white; 
+    position: absolute; 
+    align-items: center;
+    justify-content: center; 
+    padding: 0px; 
+}
+
+.nav-1-signout {
+    background-color: white; 
+    margin: 5px; 
+    width: 150px;
+    border: none; 
+    margin-right: 10px;
+}

@@ -1,34 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-// import { openModal } from '../../actions/modal_actions';
-
 
 const Greeting = ({currentUser, logout, openModal}) => {
-    // const header = !currentUser ? (
-    //     <div>
-    //         <Link to="/login">Log in</Link>
-    //         <br></br>
-    //         <Link to="/signup">Get Started</Link>
-    //     </div>
-    // ) : (
-    //     <div>
-    //         <h3>Hello, {currentUser.username}</h3>
-    //         <Link to="/stories/new">Write</Link>
-    //         <button onClick={logoutUser}>Sign out</button>
-    //     </div>
-    // )
 
-   
     return (
         currentUser ? (
-            <header>
-                <Link to="/stories/new">Write</Link>
-                <button onClick={logout}>Sign out</button>
+            <header className="nav-1">
+                <h1 className="logo">Large</h1>
+                <div className="nav-buttons">
+                    {/* <ul className="user-dropdown-anchor"> */}
+                    {/* <Link to="/stories/new">Write</Link> */}
+                    {/* <Link to={`/users/${user.id}/stories`}>Edit Story</Link> */}
+                    <button className="nav-1-signout" onClick={logout}>Sign out</button>
+                    <div className="user-profile-icon">User</div>
+                </div>
             </header>
         ) : (
-            <header>
-                <button onClick={() => openModal('login')}>Log in</button>
-                <button onClick={() => openModal('signup')}>Get Started</button>
+            <header className="nav-1">
+                <h1 className="logo">Large</h1>
+                <div className="nav-buttons">
+                    <button className="nav-1-login" onClick={() => openModal('login')}>Sign in</button>
+                    <button className="nav-1-signup" onClick={() => openModal('signup')}>Get Started</button>
+                </div>
             </header>
         )
     ); 
