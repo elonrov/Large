@@ -7,7 +7,7 @@ const Root = ({ store }) => (
     <Provider store={store}>
         <HashRouter>
            <h1>Large</h1>
-            {/* <App /> */}
+            <App />
         </HashRouter>
     </Provider>
 );

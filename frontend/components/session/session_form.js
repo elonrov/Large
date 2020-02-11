@@ -8,8 +8,8 @@ class SessionForm extends React.Component {
             username: "",
             password: ""
         }
+        
         this.handleSubmit = this.handleSubmit.bind(this);
-
     };
 
     update(field) {
@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <h1>{header}</h1>
-                    {/* {this.renderErrors} */}
+                    {this.renderErrors}
                     <label>Username
                         <input type="text" value={this.state.username} onChange={this.update('username')} />
                     </label>
