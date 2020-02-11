@@ -11,7 +11,7 @@ const Greeting = ({currentUser, logout, openModal}) => {
                     {/* <Link to="/stories/new">Write</Link> */}
                     {/* <Link to={`/users/${user.id}/stories`}>Edit Story</Link> */}
                     <button className="nav-1-signout" onClick={logout}>Sign out</button>
-                    <div className="user-profile-icon">User</div>
+                    <button className="user-profile-icon">User</button>
                 </div>
             </header>
         ) : (

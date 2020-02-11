@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 import GreetingContainer from './greeting/greeting_container';
+import Footer from './footer/footer';
 import Modal from './modal/modal';
 
 const App = () => {
@@ -9,7 +10,9 @@ const App = () => {
         <div>
             <Modal />
             <header>
-                <GreetingContainer />                
+                <GreetingContainer />
+                {/* <StoryIndex /> */}
+                <Footer />                
             </header>
         </div>
     )

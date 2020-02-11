@@ -1,0 +1,25 @@
+.footer-list {
+    display: flex;
+    justify-content: center; 
+    background-color: #3aab78;
+    height: 60px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%; 
+    justify-content: space-between;
+    padding-left: 10%; 
+    padding-right: 10%;
+    align-items: center;
+    list-style: none;
+}
+
+.footer-list-item {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.connect-icons {
+    display: block; 
+
+}
