@@ -19,28 +19,26 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.closeModal)
+        this.props.processForm(user);
     }
 
     renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`${i}-error`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
+        if (this.props.errors) {
+            return (
+                <ul>
+                    {this.props.errors.map((error, i) => (
+                        <li key={`${i}-error`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            );
+        } else {
+            return "";
+        }
+    };
 
     render() {
-
-        // const link = (this.props.formType === "login") ? (
-        //     "/signup"
-        // ) : (
-        //         "/login"
-        //     );
 
         const header = (this.props.formType === "login") ? (
                 "Welcome back."
@@ -52,6 +50,12 @@ class SessionForm extends React.Component {
                 "Sign in to get personalized story recommendations, follow authors and topics you love, and interact with stories."
             ) : (
                 "Create an account to receive great stories in your inbox, personalize your homepage, and follow authors and topics that you love."
+            );
+
+        const buttonName = (this.props.formType === "login") ? (
+                "Log in"
+            ) : (
+                "Sign Up"
             );
 
         return (
@@ -74,10 +78,8 @@ class SessionForm extends React.Component {
                         onChange={this.update('password')} />
                     </label>
                     <br /><br />
-                    <button type="submit" value={this.props.formType}>{this.props.formType}</button>
+                    <button type="submit" value={this.props.formType}>{buttonName}</button>
                 </form>
-                <br />
-                <button>{other}</button>
             </div>
         )
     }

@@ -27,8 +27,8 @@ const Greeting = ({currentUser, logout, openModal}) => {
             </header>
         ) : (
             <header>
-                <button onClick={() => openModal('Log in')}>Log in</button>
-                <button onClick={() => openModal('Sign Up')}>Get Started</button>
+                <button onClick={() => openModal('login')}>Log in</button>
+                <button onClick={() => openModal('signup')}>Get Started</button>
             </header>
         )
     ); 
