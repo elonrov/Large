@@ -9,12 +9,17 @@ class SessionForm extends React.Component {
             password: ""
         }
         
-        // this.handleClose = this.handleClose.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     };
 
     update(field) {
         return e => this.setState({ [field]: e.target.value });
+    }
+
+    handleClose(e) {
+        e.preventDefault(); 
+        this.props.closeModal();
     }
 
     handleSubmit(e) {
@@ -61,21 +66,22 @@ class SessionForm extends React.Component {
         );
 
         const otherForm = (this.props.formType === "login") ? (
-            <button className="other-form-link" onClick={() => openModal('signup')}>No account? Create One</button>
+            <button className="other-form-link" onClick={() => this.props.openModal('signup')}>No account? Create One</button>
             ) : (
-            <button className="other-form-link" onClick={() => openModal('login')}>Already have an account? Sign in</button>
+            <button className="other-form-link" onClick={() => this.props.openModal('login')}>Already have an account? Sign in</button>
         );
 
         return (
             <div className="modal-session-form">
                 <form className="modal-form" onSubmit={this.handleSubmit}>
-                    <button className="modal-close-button" 
-                        onClick={() => this.props.closeModal()}>
+                    <button 
+                        className="modal-close-button" 
+                        onClick={() => this.handleClose}>
                         {String.fromCharCode(10005)}
                     </button>
                     <h1 className="modal-header">{header}</h1>
                     <h2 className="modal-subheader">{subheader}</h2>
-                    {this.renderErrors()}
+                    <div>{this.renderErrors()}</div>
                     <label className="modal-label">Username
                         <br />
                         <input className="modal-input"

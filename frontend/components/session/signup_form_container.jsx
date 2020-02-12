@@ -13,9 +13,12 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = (dispatch) => ({
-    processForm: (user) => dispatch(signup(user)),
-    closeModal: () => dispatch(closeModal())
-});
+const mapDispatchToProps = (dispatch) => {
+    return {
+        processForm: (user) => dispatch(signup(user)),
+        closeModal: () => dispatch(closeModal()),
+        openModal: (modal) => dispatch(openModal(modal))
+    }
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);

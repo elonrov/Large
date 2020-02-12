@@ -315,7 +315,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    currentUser: state.entities.users[state.sessions.id]
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
@@ -470,6 +470,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
+    },
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal));
     }
   };
 };
@@ -527,9 +530,9 @@ function (_React$Component) {
     _this.state = {
       username: "",
       password: ""
-    }; // this.handleClose = this.handleClose.bind(this);
-
+    };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleClose = _this.handleClose.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -541,6 +544,12 @@ function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, field, e.target.value));
       };
+    }
+  }, {
+    key: "handleClose",
+    value: function handleClose(e) {
+      e.preventDefault();
+      this.props.closeModal();
     }
   }, {
     key: "handleSubmit",
@@ -574,12 +583,12 @@ function (_React$Component) {
       var otherForm = this.props.formType === "login" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "other-form-link",
         onClick: function onClick() {
-          return openModal('signup');
+          return _this3.props.openModal('signup');
         }
       }, "No account? Create One") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "other-form-link",
         onClick: function onClick() {
-          return openModal('login');
+          return _this3.props.openModal('login');
         }
       }, "Already have an account? Sign in");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -590,13 +599,13 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "modal-close-button",
         onClick: function onClick() {
-          return _this3.props.closeModal();
+          return _this3.handleClose;
         }
       }, String.fromCharCode(10005)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "modal-header"
       }, header), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "modal-subheader"
-      }, subheader), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, subheader), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "modal-label"
       }, "Username", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "modal-input",
@@ -659,6 +668,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
+    },
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal));
     }
   };
 };
@@ -767,7 +779,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var modalReducer = function modalReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
