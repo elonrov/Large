@@ -151,6 +151,7 @@ var logoutCurrentUser = function logoutCurrentUser() {
 };
 
 var receiveErrors = function receiveErrors(errors) {
+  debugger;
   return {
     type: RECEIVE_SESSION_ERRORS,
     errors: errors
@@ -474,18 +475,16 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["login"])(user));
     },
+    processDemo: function processDemo(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["login"])(user));
+    },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
     },
     openModal: function openModal(modal) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal));
-    },
-    demoLogin: function demoLogin() {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["login"])({
-        username: "demouser",
-        password: "demopw"
-      }));
-    }
+    } // demoLogin: () => dispatch(login({username: "demouser", password: "demopw"}))
+
   };
 };
 
@@ -545,6 +544,7 @@ function (_React$Component) {
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleClose = _this.handleClose.bind(_assertThisInitialized(_this));
+    _this.demoLogin = _this.demoLogin.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -571,8 +571,19 @@ function (_React$Component) {
       this.props.processForm(user); // this.props.closeModal();
     }
   }, {
+    key: "demoLogin",
+    value: function demoLogin() {
+      // e.preventDefault(); 
+      return this.props.processDemo({
+        username: "demouser",
+        password: "demopw"
+      });
+    }
+  }, {
     key: "renderErrors",
     value: function renderErrors() {
+      debugger;
+
       if (this.props.errors) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -588,6 +599,7 @@ function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
+      debugger;
       var header = this.props.formType === "login" ? "Welcome back." : "Join Large.";
       var subheader = this.props.formType === "login" ? "Sign in to get personalized story recommendations, follow authors and topics you love, and interact with stories." : "Create an account to receive great stories in your inbox, personalize your homepage, and follow authors and topics that you love.";
       var buttonName = this.props.formType === "login" ? "Log in" : "Sign Up";
@@ -646,7 +658,7 @@ function (_React$Component) {
       }, buttonName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "demo-user",
         onClick: function onClick() {
-          return demoLogin();
+          return _this3.demoLogin();
         }
       }, "Demo User")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), otherForm))));
     }
@@ -679,8 +691,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  debugger;
   return {
-    errors: state.errors.sessions,
+    errors: state.errors.session,
     formType: "signup" // currentUser: state.session.null
 
   };
@@ -691,18 +704,16 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["signup"])(user));
     },
+    processDemo: function processDemo(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["login"])(user));
+    },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
     },
     openModal: function openModal(modal) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal));
-    },
-    demoLogin: function demoLogin() {
-      return dispatch(login({
-        username: "demouser",
-        password: "demopw"
-      }));
-    }
+    } // demoLogin: () => dispatch(login({ username: "demouser", password: "demopw" }))
+
   };
 };
 
@@ -761,8 +772,13 @@ var Splash = function Splash(_ref) {
     onClick: function onClick() {
       return openModal('signup');
     },
-    className: "footer"
-  }, "Get started.")));
+    className: "signup-button"
+  }, "Get started."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return openModal('login');
+    },
+    className: "login-button"
+  }, "Already have an account? Sign in.")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);

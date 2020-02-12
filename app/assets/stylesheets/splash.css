@@ -72,7 +72,7 @@
 .splash-p {
     font-family: 'Merriweather Sans', sans-serif;
     font-size: 18px;
-    color: #2b2b2b;
+    color: #5e5d5d;
     margin: 0px;
     padding: 0px 40px;
     line-height: 2.2;
@@ -81,7 +81,7 @@
 .splash-p-2 {
     font-family: 'Merriweather Sans', sans-serif;
     font-size: 18px;
-    color: #2b2b2b;
+    color: #5e5d5d;
     margin: 0px;
     padding: 0px 40px;
     line-height: 2.2;
@@ -92,20 +92,44 @@
     padding-right: 30px;
 }
 
-.footer {
+.section-4 {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.signup-button {
     background-color: #3aab78;
     height: 60px;
     width: 330px;
     color: white;
-    display: flex;
+    /* display: flex; */
     border-radius: 4px;
-    font-family: 'Merriweather Sans', sans-serif;
     font-size: 25px;
+    font-family: 'Merriweather Sans', sans-serif;
     justify-content: center;
     align-items: center;
-    margin-bottom: 120px;
 }
+
+.login-button {
+    height: 60px;
+    width: 330px;
+    /* display: flex; */
+    border-radius: 4px;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: white; 
+    color: #3aab78;
+    border: none; 
+}
+
 
 button:hover {
     cursor: pointer;
+}
+
+button:focus {
+    outline: none;
 }

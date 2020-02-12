@@ -20,6 +20,7 @@ const logoutCurrentUser = () => {
 
 
 export const receiveErrors = (errors) => {
+    debugger
     return {
         type: RECEIVE_SESSION_ERRORS,
         errors: errors
@@ -29,9 +30,9 @@ export const receiveErrors = (errors) => {
 export const login = (user) => dispatch => {
     return SessionAPIUtil.login(user).then((user) => dispatch(receiveCurrentUser(user)), error => (dispatch(receiveErrors(error.responseJSON))));
 };
+
 export const signup = (user) => dispatch => {
-    return SessionAPIUtil.signup(user).then((user) => dispatch(receiveCurrentUser(user)), error => (dispatch(receiveErrors(error.responseJSON))));
-};
+    return SessionAPIUtil.signup(user).then((user) => dispatch(receiveCurrentUser(user)), error => (dispatch(receiveErrors(error.responseJSON))));};
 
 export const logout = () => dispatch => {
     return SessionAPIUtil.logout().then(() => 

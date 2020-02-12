@@ -41,7 +41,8 @@ const Splash = ({openModal}) => {
                 </section>
                 
                 <section className="section-4">                        
-                    <button onClick={() => openModal('signup')} className="footer">Get started.</button>
+                    <button onClick={() => openModal('signup')} className="signup-button">Get started.</button>
+                    <button onClick={() => openModal('login')} className="login-button">Already have an account? Sign in.</button>
                 </section>
             </div>
         )
