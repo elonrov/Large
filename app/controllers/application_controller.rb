@@ -28,7 +28,7 @@ helper_method :current_user, :logged_in?
 
    def require_logged_in
     unless current_user
-      render json: { base: ['invalid credentials'] }, status: 401
+      render json: { base: ['Please log in to continue.'] }, status: 401
     end
   end
 

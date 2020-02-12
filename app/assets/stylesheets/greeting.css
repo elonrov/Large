@@ -32,6 +32,12 @@
     font-size: 16px;
 }
 
+.nav-1-login:focus, .nav-1-signup:focus, 
+.user-profile-icon:focus, .nav-1-signout:focus {
+    outline: none;
+}
+
+
 .nav-1-login {
     background-color: white; 
     margin: 5px; 

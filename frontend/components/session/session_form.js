@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        this.props.closeModal();
+        // this.props.closeModal();
     }
 
     renderErrors() {
@@ -72,16 +72,15 @@ class SessionForm extends React.Component {
         );
 
         return (
-            <div className="modal-session-form">
+            <div style={{ backgroundImage: `url(${window.formImg})` }} className="modal-session-form">
                 <form className="modal-form" onSubmit={this.handleSubmit}>
                     <button 
                         className="modal-close-button" 
-                        onClick={() => this.handleClose}>
+                        onClick={this.handleClose}>
                         {String.fromCharCode(10005)}
                     </button>
                     <h1 className="modal-header">{header}</h1>
                     <h2 className="modal-subheader">{subheader}</h2>
-                    <div>{this.renderErrors()}</div>
                     <label className="modal-label">Username
                         <br />
                         <input className="modal-input"
@@ -97,6 +96,7 @@ class SessionForm extends React.Component {
                         value={this.state.password} 
                         onChange={this.update('password')} />
                     </label>
+                    <div className="modal-errors">{this.renderErrors()}</div>
                     <br /><br />
                     <button className="submit-button" type="submit" value={this.props.formType}>{buttonName}</button>
                     <br />
