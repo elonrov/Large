@@ -72,40 +72,44 @@ class SessionForm extends React.Component {
         );
 
         return (
-            <div style={{ backgroundImage: `url(${window.formImg})` }} className="modal-session-form">
-                <form className="modal-form" onSubmit={this.handleSubmit}>
-                    <button 
-                        className="modal-close-button" 
-                        onClick={this.handleClose}>
-                        {String.fromCharCode(10005)}
-                    </button>
-                    <h1 className="modal-header">{header}</h1>
-                    <h2 className="modal-subheader">{subheader}</h2>
-                    <label className="modal-label">Username
-                        <br />
-                        <input className="modal-input"
-                        type="text" 
-                        value={this.state.username} 
-                        onChange={this.update('username')} />
-                    </label >
-                    <br /><br />
-                    <label className="modal-label">Password
-                        <br />
-                        <input className="modal-input"
-                        type="password" 
-                        value={this.state.password} 
-                        onChange={this.update('password')} />
-                    </label>
-                    <div className="modal-errors">{this.renderErrors()}</div>
-                    <br /><br />
-                    <div className="submit-buttons">
-                        <button className="submit-button" type="submit" value={this.props.formType}>{buttonName}</button>
-                        <br /><br />
-                        <button className="demo-user" onClick={() => demoLogin()}>Demo User</button>
+            <div className="modal-background">
+                <div className="modal-child">
+                    <div style={{ backgroundImage: `url(${window.formImg})` }} className="modal-session-form">
+                        <form className="modal-form" onSubmit={this.handleSubmit}>
+                            <button 
+                                className="modal-close-button" 
+                                onClick={this.handleClose}>
+                                {String.fromCharCode(10005)}
+                            </button>
+                            <h1 className="modal-header">{header}</h1>
+                            <h2 className="modal-subheader">{subheader}</h2>
+                            <label className="modal-label">Username
+                                <br />
+                                <input className="modal-input"
+                                type="text" 
+                                value={this.state.username} 
+                                onChange={this.update('username')} />
+                            </label >
+                            <br /><br />
+                            <label className="modal-label">Password
+                                <br />
+                                <input className="modal-input"
+                                type="password" 
+                                value={this.state.password} 
+                                onChange={this.update('password')} />
+                            </label>
+                            <div className="modal-errors">{this.renderErrors()}</div>
+                            <br /><br />
+                            <div className="submit-buttons">
+                                <button className="submit-button" type="submit" value={this.props.formType}>{buttonName}</button>
+                                <br /><br />
+                                <button className="demo-user" onClick={() => demoLogin()}>Demo User</button>
+                            </div>
+                            <br />
+                            {otherForm}
+                        </form>
                     </div>
-                    <br />
-                    {otherForm}
-                 </form>
+                </div>
             </div>
         )
     }

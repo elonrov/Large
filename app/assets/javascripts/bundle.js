@@ -197,7 +197,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
-/* harmony import */ var _splash_splash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash/splash */ "./frontend/components/splash/splash.jsx");
+/* harmony import */ var _splash_splash_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash/splash_container */ "./frontend/components/splash/splash_container.js");
 /* harmony import */ var _footer_footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./footer/footer */ "./frontend/components/footer/footer.jsx");
 /* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
 
@@ -211,7 +211,7 @@ var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
-    component: _splash_splash__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _splash_splash_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_footer__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
 };
 
@@ -603,6 +603,10 @@ function (_React$Component) {
         }
       }, "Already have an account? Sign in");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-background"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-child"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           backgroundImage: "url(".concat(window.formImg, ")")
         },
@@ -644,7 +648,7 @@ function (_React$Component) {
         onClick: function onClick() {
           return demoLogin();
         }
-      }, "Demo User")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), otherForm));
+      }, "Demo User")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), otherForm))));
     }
   }]);
 
@@ -718,88 +722,84 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
- // const Splash = (props) => {
 
-var Splash =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Splash, _React$Component);
-
-  function Splash() {
-    _classCallCheck(this, Splash);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Splash).apply(this, arguments));
-  }
-
-  _createClass(Splash, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "section-1"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "splash-header-1"
-      }, "Like Medium, but bigger."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "splash-header-2"
-      }, "big stories about big ideas."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        style: {
-          backgroundImage: "url(".concat(window.splash1, ")")
-        },
-        className: "splash-image"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "section-2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "splash-header-3"
-      }, "Ideas and perspectives you won\u2019t find anywhere else."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "splash-p"
-      }, "Medium taps into the brains of the world\u2019s most insightful writers, thinkers, and storytellers to bring you the smartest takes on topics that matter. So whatever your interest, you can always find fresh thinking and unique perspectives.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "section-3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        style: {
-          backgroundImage: "url(".concat(window.splash2, ")")
-        },
-        className: "splash-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "splash-p"
-      }, "With the power of the network, different ways to engage with stories, and the ability to follow your favorite topics, writers, and publications, you\u2019re in control of your reading experience. So the stories that matter most to you are always at your fingertips."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "splash-header-3"
-      }, "A customizable reading experience, made just for you.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "section-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        style: {
-          backgroundImage: "url(".concat(window.splash3, ")")
-        },
-        className: "splash-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "splash-header-2"
-      }, "Log in or sign up above to get started.")));
+var Splash = function Splash(_ref) {
+  var openModal = _ref.openModal;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash",
+    style: {
+      backgroundImage: "url(".concat(window.splash3, ")")
     }
-  }]);
-
-  return Splash;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    style: {
+      backgroundImage: "url(".concat(window.splash1, ")")
+    },
+    className: "image-section-1"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "section-1"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "splash-header-1"
+  }, "Like Medium, but bigger."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "splash-header-2"
+  }, "big stories about big ideas.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "section-2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "splash-header-3"
+  }, "Ideas and perspectives you won\u2019t find anywhere else."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "splash-p"
+  }, "Medium taps into the brains of the world\u2019s most insightful writers, thinkers, and storytellers to bring you the smartest takes on topics that matter. So whatever your interest, you can always find fresh thinking and unique perspectives."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "section-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "splash-p-2"
+  }, "With the power of the network, different ways to engage with stories, and the ability to follow your favorite topics, writers, and publications, you\u2019re in control of your reading experience. So the stories that matter most to you are always at your fingertips."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "splash-header-3"
+  }, "A customizable reading experience, made just for you.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "section-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return openModal('signup');
+    },
+    className: "footer"
+  }, "Get started.")));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_container.js":
+/*!********************************************************!*\
+  !*** ./frontend/components/splash/splash_container.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _splash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./splash */ "./frontend/components/splash/splash.jsx");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    currentUser: state.entities.users[state.session.id]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__["openModal"])(modal));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_splash__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 

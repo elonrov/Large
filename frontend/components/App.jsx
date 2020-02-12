@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import GreetingContainer from './greeting/greeting_container';
-import Splash from './splash/splash';
+import SplashContainer from './splash/splash_container';
 import Footer from './footer/footer';
 import Modal from './modal/modal';
 
@@ -12,10 +12,9 @@ const App = () => {
             <Modal />
             <header>
                 <GreetingContainer />
-                {/* <StoryIndex /> */}               
             </header>
             <Switch>
-                <Route exact path="/" component={Splash} />
+                <Route exact path="/" component={SplashContainer} />
             </Switch>
             <footer>
                 <Footer /> 
