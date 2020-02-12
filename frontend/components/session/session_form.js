@@ -98,7 +98,11 @@ class SessionForm extends React.Component {
                     </label>
                     <div className="modal-errors">{this.renderErrors()}</div>
                     <br /><br />
-                    <button className="submit-button" type="submit" value={this.props.formType}>{buttonName}</button>
+                    <div className="submit-buttons">
+                        <button className="submit-button" type="submit" value={this.props.formType}>{buttonName}</button>
+                        <br /><br />
+                        <button className="demo-user" onClick={() => demoLogin()}>Demo User</button>
+                    </div>
                     <br />
                     {otherForm}
                  </form>

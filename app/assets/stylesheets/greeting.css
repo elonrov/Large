@@ -6,9 +6,10 @@
     /* padding: 5px; */
     height: 60px;
     position: fixed; 
-    top: 10px; 
+    top: 0px; 
     width: 100%;
     line-height: 1px;
+    z-index: 1;
 }
 
 .logo {
