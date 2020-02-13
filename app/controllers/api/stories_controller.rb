@@ -1,7 +1,7 @@
 class Api::StoriesController < ApplicationController 
     
     def index 
-        @stories = Story.all.includes(:author)
+        @stories = Story.all
         render :index
     end
 

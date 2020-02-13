@@ -10,7 +10,9 @@ class StoryIndex extends React.Component {
         return (
             <div>
                 <h1>Story Index</h1>
-                {/* <Link to="/api/story/new">Write</Link> */}
+                {
+                    // this.props.stories.map(story => )
+                }
             </div>
         )
     };
