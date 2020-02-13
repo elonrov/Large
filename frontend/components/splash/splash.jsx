@@ -26,9 +26,16 @@ const Splash = ({openModal}) => {
                         </p>
                     </section>
                 </section>
-                
-                <section className="section-3">
 
+                <ul className="splash-list">
+                    <li className="splash-list-item"><img src={window.bullet} className="bullet"/>Worldclass publications.</li>
+                    <li className="splash-list-item"><img src={window.bullet} className="bullet"/>Undiscovered voices.</li>
+                    <li className="splash-list-item"><img src={window.bullet} className="bullet"/>Topics you love.</li>
+                </ul>
+
+                <section className="section-3">
+                   
+                    {/* <h3>No ads. No problems.</h3> */}
                     <p className="splash-p-2"> 
                     With the power of the network, different ways to engage 
                     with stories, and the ability to follow your favorite topics, 

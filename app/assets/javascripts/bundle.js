@@ -574,12 +574,11 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user); // this.props.closeModal();
+      this.props.processForm(user);
     }
   }, {
     key: "demoLogin",
     value: function demoLogin() {
-      // e.preventDefault(); 
       return this.props.processDemo({
         username: "demouser",
         password: "demopw"
@@ -762,7 +761,24 @@ var Splash = function Splash(_ref) {
     className: "splash-header-3"
   }, "Ideas and perspectives you won\u2019t find anywhere else."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "splash-p"
-  }, "Medium taps into the brains of the world\u2019s most insightful writers, thinkers, and storytellers to bring you the smartest takes on topics that matter. So whatever your interest, you can always find fresh thinking and unique perspectives."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+  }, "Medium taps into the brains of the world\u2019s most insightful writers, thinkers, and storytellers to bring you the smartest takes on topics that matter. So whatever your interest, you can always find fresh thinking and unique perspectives."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "splash-list"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "splash-list-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.bullet,
+    className: "bullet"
+  }), "Worldclass publications."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "splash-list-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.bullet,
+    className: "bullet"
+  }), "Undiscovered voices."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "splash-list-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.bullet,
+    className: "bullet"
+  }), "Topics you love.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "section-3"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "splash-p-2"
