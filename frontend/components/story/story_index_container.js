@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { StoryIndex } from './story_index';
+import StoryIndex from './story_index';
 import { fetchAllStories } from '../../actions/story_actions';
 
 const mapStateToProps = (state) => {
