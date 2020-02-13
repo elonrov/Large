@@ -151,7 +151,6 @@ var logoutCurrentUser = function logoutCurrentUser() {
 };
 
 var receiveErrors = function receiveErrors(errors) {
-  debugger;
   return {
     type: RECEIVE_SESSION_ERRORS,
     errors: errors
@@ -237,14 +236,21 @@ var Footer = function Footer(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "footer-list"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "footer-list-item"
-  }, "Created by Elon Rov"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "connect-icons"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://elonrov.com",
     className: "footer-list-item"
-  }, "GitHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-list-item"
-  }, "LinkedIn")));
+  }, "Created by Elon Rov"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/elonrov"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "footer-list-git",
+    src: window.github
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://www.linkedin.com/in/elon-rov-1389648b"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "footer-list-linked",
+    src: window.linkedin
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -582,8 +588,6 @@ function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      debugger;
-
       if (this.props.errors) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -599,7 +603,6 @@ function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      debugger;
       var header = this.props.formType === "login" ? "Welcome back." : "Join Large.";
       var subheader = this.props.formType === "login" ? "Sign in to get personalized story recommendations, follow authors and topics you love, and interact with stories." : "Create an account to receive great stories in your inbox, personalize your homepage, and follow authors and topics that you love.";
       var buttonName = this.props.formType === "login" ? "Log in" : "Sign Up";
@@ -691,7 +694,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   return {
     errors: state.errors.session,
     formType: "signup" // currentUser: state.session.null

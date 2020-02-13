@@ -36,7 +36,6 @@ class SessionForm extends React.Component {
     }
 
     renderErrors() {
-        debugger
         if (this.props.errors) {
             return (
                 <ul>
@@ -53,7 +52,6 @@ class SessionForm extends React.Component {
     };
 
     render() {
-        debugger
         const header = (this.props.formType === "login") ? (
                 "Welcome back."
             ) : (
