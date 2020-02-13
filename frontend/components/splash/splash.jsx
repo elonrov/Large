@@ -19,7 +19,7 @@ const Splash = ({openModal}) => {
                     <section className="section-2">
                         <h3 className="splash-header-3">Ideas and perspectives you won’t find anywhere else.</h3>
                         <p className="splash-p">
-                        Medium taps into the brains of the world’s most insightful 
+                        Large taps into the brains of the world’s most insightful 
                         writers, thinkers, and storytellers to bring you the smartest 
                         takes on topics that matter. So whatever your interest, you 
                         can always find fresh thinking and unique perspectives.

@@ -15,6 +15,7 @@ const App = () => {
             </header>
             <Switch>
                 <Route exact path="/" component={SplashContainer} />
+                <Route exact path="/stories" component={StoryIndex} />
             </Switch>
             <footer>
                 <Footer /> 
