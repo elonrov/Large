@@ -6,7 +6,8 @@ import SplashContainer from './splash/splash_container';
 import Footer from './footer/footer';
 import Modal from './modal/modal';
 import StoryIndexContainer from './story/story_index_container';
-import StoryShow from './story/story_show';
+import StoryShowContainer from './story/story_show_container';
+import CreateStoryContainer from './story/create_story_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -18,8 +19,9 @@ const App = () => {
             </header>
             <Switch>
                 <AuthRoute exact path="/" component={SplashContainer} />
-                <ProtectedRoute path="/stories" component={StoryIndexContainer} />
-                <ProtectedRoute path="/stories/:storyId" component={StoryShow} />
+                <ProtectedRoute exact path="/stories" component={StoryIndexContainer} />
+                <ProtectedRoute exact path="/stories/new" component={CreateStoryContainer} />
+                <Route path="/stories/:storyId" component={StoryShowContainer} />
             </Switch>
             <footer>
                 <Footer /> 

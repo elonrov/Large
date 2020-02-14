@@ -5,15 +5,17 @@ import StoryShow from './story_show';
 import { fetchStory } from '../../actions/story_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    const story = state.entities.stories[ownProps.match.params.storyId] || {};
+    const author = state.entities.users[story.author_id] || {};
     return {
-        story: state.stories[ownProps.match.params.storyId],
-        // author: state.stories[ownProps.match.params.storyId.authorId]
+        story: story,
+        author: author
     }
 }; 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchStory: story => dispatch(fetchStory(story))
+        fetchStory: storyId => dispatch(fetchStory(storyId))
     }
 }; 
 

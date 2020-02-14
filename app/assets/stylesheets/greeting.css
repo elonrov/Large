@@ -5,9 +5,12 @@
     height: 60px;
     position: fixed; 
     top: 0px; 
+    left: 0px;
+    padding-bottom: 7px;
     width: 100%;
     line-height: 1px;
     z-index: 1;
+    box-shadow: 0 8px 8px -8px #d1cfcf;
 }
 
 .logo {
@@ -15,6 +18,7 @@
     padding-left: 25px;
     color: black; 
     font-size: 42px;
+    text-decoration: none;
 }
 
 .nav-buttons {
@@ -22,20 +26,27 @@
     padding-right: 25px; 
 }
 
-.nav-buttons, .nav-1-login, .nav-1-signup, .user-profile-icon, .nav-1-signout {
+.nav-buttons, .nav-1-login, .nav-1-signup, .user-profile-icon, .nav-1-write, .nav-1-signout {
     display: flex;
-    padding-left: 15px;
     border-radius: 4px;
     height: 40px;
     font-family: 'Merriweather Sans', sans-serif;
     font-size: 16px;
+    justify-content: center;
 }
 
 .nav-1-login:focus, .nav-1-signup:focus, 
-.user-profile-icon:focus, .nav-1-signout:focus {
+.user-profile-icon:focus, .nav-1-write:focus, .nav-1-signout:focus {
     outline: none;
 }
 
+.nav-1-write {
+    align-items: center; 
+    justify-content: center;
+    color: black; 
+    text-decoration: none;
+    margin-right: 0px;
+}
 
 .nav-1-login {
     background-color: white; 
@@ -61,16 +72,18 @@
     /* position: absolute;  */
     align-items: center;
     justify-content: center; 
-    padding: 0px; 
+    padding: 0px;
+    margin-left: 15px; 
 }
 
-.nav-1-signout {
+.nav-1-signout, .nav-1-write {
     background-color: white; 
     margin: 5px; 
     width: 100px;
     border: none; 
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
+
 
 button:hover {
     cursor: pointer;

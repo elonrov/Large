@@ -13,10 +13,11 @@ const receiveAllStories = (stories) => {
     }
 }; 
 
-const receiveStory = (story) => {
+const receiveStory = ({story, author} ) => {
     return {
         type: RECEIVE_STORY, 
-        story: story
+        story: story,
+        author: author
     }
 }; 
 

@@ -1,0 +1,67 @@
+.story-show {
+    margin: 110px 0px;
+    width: 70%; 
+    margin-left: 15%
+}
+
+.responses {
+    background-color: #edebeb;
+    margin-bottom: 90px; 
+    width: 100%; 
+    margin: 0px;
+    min-height: 500px;
+    font-family: 'Merriweather Sans', sans-serif;
+
+}
+
+.title {
+    font-family: 'Amiri', serif;
+    font-weight: lighter;
+    font-size: 50px;
+    margin-bottom: 10px; 
+    line-height: 1;
+}
+
+.subtitle {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 18px;
+    color: grey;
+    margin: 0px;
+    font-weight: lighter; 
+    letter-spacing: 1px;
+}
+
+.author {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 12px;
+    color: grey;
+    margin: 20px 0px;
+    line-height: .7; 
+
+}
+
+.author-name {
+     margin: 0;
+}
+
+.date {
+    margin: 5px 0px;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 11px;
+    color: grey;
+}
+
+.story-cover-photo {
+    height: 300px; 
+    border: 2px solid red;
+    margin: 40px 0px;
+}
+
+.story-show p {
+    font-family: 'Lora', serif;
+    font-size: 18px; 
+    font-weight: lighter;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    color: #2b2b2b;
+}
