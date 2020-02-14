@@ -59,15 +59,17 @@ class StoryIndex extends React.Component {
                 <section className="index-section-2">
                     <div className="feed-all">
                         <h3>My Feed</h3>
-                        <ul>
+                        <ul className="feed-list">
                             {feedIndex}
                         </ul>
                     </div>
-                    <div className="popular">
-                        <h3>Popular on Large</h3>
-                        <ol className="popular-list">
-                            {popularIndex}
-                        </ol>
+                    <div className="popular-container">
+                        <div className="popular">
+                            <h3>Popular on Large</h3>
+                            <ol className="popular-list">
+                                {popularIndex}
+                            </ol>
+                        </div>
                     </div>
                 </section>
             </div>

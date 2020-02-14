@@ -7,7 +7,7 @@
 .index-page h3 {
     color: #2b2b2b; 
     font-size: 20px;
-    padding-left: 40px;
+    margin-left: 40px;
 }
 
 .editor-picks-list {
@@ -33,6 +33,11 @@
     left: 15px; 
     position: absolute; 
     width: 60%;  
+}
+
+.feed-list {
+    padding: 0px; 
+    margin-left: 40px;
 }
 
 .feed-story {

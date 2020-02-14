@@ -6,8 +6,8 @@ class Api::StoriesController < ApplicationController
     end
 
     def show
-        @story = Story.find(params[:id])
-        render :show        
+        @story = Story.includes(:author).find(params[:id])
+        render :show
     end
 
     def create
