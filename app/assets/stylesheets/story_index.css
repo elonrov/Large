@@ -1,7 +1,23 @@
 .index-section-1 {
     display: flex;
-    padding-top: 65px;
     font-family: 'Merriweather Sans', sans-serif;
+}
+
+.categories-list {
+    margin: 0px 40px;
+    list-style: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px; 
+    display: flex; 
+    justify-content: space-between;
+    padding: 80px 0px 0px 0px;
+    background-color: white;
+    color: grey;
+}
+
+.category-name:hover {
+    color: black;
+    cursor: pointer;
 }
 
 .index-page h3 {
@@ -14,11 +30,11 @@
     display: flex; 
     flex-wrap: nowrap; 
     height: 375px; 
-    padding-left: 40px;
+    padding: 0px 40px;
 }
 
 .editor-pick-story {
-    margin-right: 20px;
+    /* margin-right: 20px; */
     padding: 10px;
     border: 1px solid grey;
     position: relative;
@@ -26,6 +42,11 @@
 
 .index-section-2 {
     display: flex;
+    font-family: 'Merriweather Sans', sans-serif;
+    padding: 0px; 
+    margin: 0px, 40px;
+    padding-bottom: 90px;
+    position: relative;
 }
 
 .feed-all {
@@ -33,11 +54,22 @@
     left: 15px; 
     position: absolute; 
     width: 60%;  
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.feed-all h3, .popular h3 {
+    color: #474747;
+    font-size: 14px;
+}
+
+.feed {
+    display: flex;
 }
 
 .feed-list {
     padding: 0px; 
     margin-left: 40px;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .feed-story {
@@ -47,7 +79,7 @@
 }
 
 .popular {
-    align-items: right; 
+    /* align-items: right;  */
     right: 15px; 
     position: absolute; 
     width: 35%;
@@ -72,14 +104,32 @@
 }
 
 .story-author {
-    font-size: 16px;
-    color: #2b2b2b;
-    margin: 3px 0px;
+    font-size: 14px;
+    color: #474747;
+    margin: 5px 0px;
     position: absolute; 
     bottom: 0px;
 }
 
+.preview {
+    display: flex;
+    justify-content: space-between;
+}
 .story-preview {
     font-size: 14px;
     color: grey;
+    font-weight: lighter;
+    width: 75%;
 }
+
+.story-thumbnail img {
+    width: 150px; 
+    height: 75%; 
+    border: 1px red solid;
+}
+
+.published-date {
+    margin: 0; 
+    color: #474747;
+}
+

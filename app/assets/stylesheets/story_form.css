@@ -1,0 +1,84 @@
+.story-form-page {
+    position: relative;
+    margin: 85px 0px;
+}
+.story-form {
+    position: absolute;
+    width: 60%;
+    left: 20%;
+    /* border: 1px grey solid;  */
+    display: flex; 
+    flex-direction: column;
+    
+}
+
+.form-title {
+    text-align: center;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.story-form-input-title, .story-form-input-body {
+    font-family: 'Playfair Display', serif;
+    color: grey; 
+    border: none;
+}
+
+.story-form-input-title:focus, .story-form-input-body:focus {
+    outline: none;
+    border-left: 1px solid silver;
+}
+
+.story-form-input-title {
+    font-size: 40px;
+    letter-spacing: 1px
+}
+
+.story-form-input-body {
+    font-size: 22px;
+    width: 100%; 
+    min-height: 425px;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+}
+
+.story-form-buttons {
+    display: flex;
+    justify-content: center; 
+    margin: 0 auto;
+    margin-bottom: 100px;
+    width: 75px; 
+    
+}
+
+
+.story-form-publish, .story-form-cancel {
+    width: 150px; 
+    border: none; 
+    padding: 10px 45px; 
+    margin: 0; 
+    font-size: 18px;
+    border-radius: 4px; 
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.story-form-publish {
+    background-color: #3aab78;  
+    color: white; 
+    margin-right: 10px;
+}
+
+.story-form-cancel {
+    background-color: silver;
+    color: black; 
+    text-decoration: none; 
+    margin-left: 10px;
+}
+
+.story-form-cancel button {
+    background-color: none;
+}
+
+.no-link {
+    color: black; 
+    text-decoration: none; 
+}

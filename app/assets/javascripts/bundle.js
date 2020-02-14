@@ -216,10 +216,13 @@ var receiveAllStories = function receiveAllStories(stories) {
   };
 };
 
-var receiveStory = function receiveStory(story) {
+var receiveStory = function receiveStory(_ref) {
+  var story = _ref.story,
+      author = _ref.author;
   return {
     type: RECEIVE_STORY,
-    story: story
+    story: story,
+    author: author
   };
 };
 
@@ -310,8 +313,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _footer_footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./footer/footer */ "./frontend/components/footer/footer.jsx");
 /* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
 /* harmony import */ var _story_story_index_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./story/story_index_container */ "./frontend/components/story/story_index_container.js");
-/* harmony import */ var _story_story_show__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./story/story_show */ "./frontend/components/story/story_show.jsx");
-/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.js");
+/* harmony import */ var _story_story_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./story/story_show_container */ "./frontend/components/story/story_show_container.js");
+/* harmony import */ var _story_create_story_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./story/create_story_container */ "./frontend/components/story/create_story_container.js");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.js");
+
 
 
 
@@ -323,16 +328,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["AuthRoute"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["AuthRoute"], {
     exact: true,
     path: "/",
     component: _splash_splash_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["ProtectedRoute"], {
+    exact: true,
     path: "/stories",
     component: _story_story_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["ProtectedRoute"], {
+    exact: true,
+    path: "/stories/new",
+    component: _story_create_story_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/stories/:storyId",
-    component: _story_story_show__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _story_story_show_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_footer__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
 };
 
@@ -389,6 +399,8 @@ var Footer = function Footer(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 var Greeting = function Greeting(_ref) {
@@ -397,11 +409,17 @@ var Greeting = function Greeting(_ref) {
       openModal = _ref.openModal;
   return currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: "nav-1"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/",
+    className: "logo"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "logo"
-  }, "Large"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Large")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-buttons"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nav-1-write",
+    to: "stories/new"
+  }, "Write"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "nav-1-signout",
     onClick: logout
   }, "Sign out"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -958,6 +976,151 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/story/create_story_container.js":
+/*!*************************************************************!*\
+  !*** ./frontend/components/story/create_story_container.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_story_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/story_actions */ "./frontend/actions/story_actions.js");
+/* harmony import */ var _story_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./story_form */ "./frontend/components/story/story_form.jsx");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    story: {
+      title: "",
+      body: ""
+    },
+    formType: "New Story"
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    action: function action(story) {
+      return dispatch(Object(_actions_story_actions__WEBPACK_IMPORTED_MODULE_1__["createStory"])(story));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_story_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/story/story_form.jsx":
+/*!**************************************************!*\
+  !*** ./frontend/components/story/story_form.jsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var StoryForm =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(StoryForm, _React$Component);
+
+  function StoryForm(props) {
+    var _this;
+
+    _classCallCheck(this, StoryForm);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(StoryForm).call(this, props));
+    _this.state = _this.props.story;
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(StoryForm, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      this.props.action(this.state);
+    }
+  }, {
+    key: "update",
+    value: function update(field) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, field, e.target.value));
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "story-form-page"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "story-form",
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "story-form-input-title",
+        type: "text",
+        placeholder: "Title",
+        value: this.state.title,
+        onChange: this.update('title')
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        className: "story-form-input-body",
+        placeholder: "Tell your story...",
+        value: this.state.body,
+        onChange: this.update('body')
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "story-form-buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "story-form-publish",
+        type: "submit"
+      }, "Publish"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "story-form-cancel"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/",
+        className: "no-link"
+      }, "Cancel")))));
+    }
+  }]);
+
+  return StoryForm;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (StoryForm);
+
+/***/ }),
+
 /***/ "./frontend/components/story/story_index.jsx":
 /*!***************************************************!*\
   !*** ./frontend/components/story/story_index.jsx ***!
@@ -1040,6 +1203,8 @@ function (_React$Component) {
       var feedIndex = this.props.stories.slice(10).map(function (story, i) {
         var preview = story.body.slice(0, 100) + "...";
         if (i) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "feed"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "feed-story",
           key: "".concat(i, "-story.id").concat(Math.floor(Math.random() * 1000))
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -1049,11 +1214,31 @@ function (_React$Component) {
           className: "story-preview"
         }, preview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
           className: "story-author"
-        }, story.author));
+        }, story.author), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+          className: "published-date"
+        }, "Feb 14, 2020 \xB7 5 min read \u2605")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "story-thumbnail"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", null)));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "index-page"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "categories-list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "category-name"
+      }, "AIRCRAFT"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "category-name"
+      }, "SHORT/SICK"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "category-name"
+      }, "ER-THAN-LIFE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "category-name"
+      }, "SKYSCRAPERS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "category-name"
+      }, "CELESTIAL BODIES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "category-name"
+      }, "BEASTS/BEHEMOTHS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "category-name"
+      }, "MOUNTAINS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "index-section-1"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "editor-picks"
@@ -1063,7 +1248,7 @@ function (_React$Component) {
         className: "index-section-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feed-all"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "My Feed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Based on your reading history"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "feed-list"
       }, feedIndex)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "popular-container"
@@ -1162,11 +1347,44 @@ function (_React$Component) {
   }
 
   _createClass(StoryShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchStory(this.props.match.params.storyId);
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.story.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.props.story.author_id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.story.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/"
-      }, "Back to Feed"));
+      var title;
+      var body;
+      var author;
+
+      if (this.props.story) {
+        title = this.props.story.title;
+        author = this.props.author.username;
+        body = this.props.story.body;
+      } else {
+        title = "";
+        body = "";
+        author = "";
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "story-show"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "title"
+      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "subtitle"
+      }, "Of considerable or relatively great size, extent, or capacity."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "author"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "author-name"
+      }, author), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "date"
+      }, "Feb 14 \xB7 5 min read \u2605")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "story-cover-photo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "responses"
+      }, "Responses Go Here"));
     }
   }]);
 
@@ -1175,6 +1393,46 @@ function (_React$Component) {
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (StoryShow);
+
+/***/ }),
+
+/***/ "./frontend/components/story/story_show_container.js":
+/*!***********************************************************!*\
+  !*** ./frontend/components/story/story_show_container.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _story_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./story_show */ "./frontend/components/story/story_show.jsx");
+/* harmony import */ var _actions_story_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/story_actions */ "./frontend/actions/story_actions.js");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var story = state.entities.stories[ownProps.match.params.storyId] || {};
+  var author = state.entities.users[story.author_id] || {};
+  return {
+    story: story,
+    author: author
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchStory: function fetchStory(storyId) {
+      return dispatch(Object(_actions_story_actions__WEBPACK_IMPORTED_MODULE_3__["fetchStory"])(storyId));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_story_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1519,9 +1777,11 @@ var uiReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _actions_story_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/story_actions */ "./frontend/actions/story_actions.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_2__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1534,7 +1794,11 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      newState = lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
+      newState = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
+      return newState;
+
+    case _actions_story_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_STORY"]:
+      newState = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.author.id, action.author));
       return newState;
 
     default:

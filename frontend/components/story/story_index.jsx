@@ -38,16 +38,31 @@ class StoryIndex extends React.Component {
             const preview = story.body.slice(0, 100) + "...";
             if (i)
                 return (
-                    <div className="feed-story" key={`${i}-story.id${(Math.floor(Math.random() * 1000))}`}>
-                        <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
-                        <p className="story-preview">{preview}</p>
-                        <h4 className="story-author">{story.author}</h4>
+                    <div className="feed">
+                        <div className="feed-story" key={`${i}-story.id${(Math.floor(Math.random() * 1000))}`}>
+                            <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
+                                <p className="story-preview">{preview}</p>
+                            <h4 className="story-author">{story.author}</h4>
+                            <h5 className="published-date">Feb 14, 2020 · 5 min read ★</h5>
+                        </div>
+                        <div className="story-thumbnail">
+                            <img />
+                        </div>
                     </div>
                 )
         });
 
         return (
             <div className="index-page">
+                <ul className="categories-list">
+                    <li className="category-name">AIRCRAFT</li>
+                    <li className="category-name">SHORT/SICK</li>
+                    <li className="category-name">ER-THAN-LIFE</li>
+                    <li className="category-name">SKYSCRAPERS</li>
+                    <li className="category-name">CELESTIAL BODIES</li>
+                    <li className="category-name">BEASTS/BEHEMOTHS</li>
+                    <li className="category-name">MOUNTAINS</li>
+                </ul>
                 <section className="index-section-1">
                     <div className="editor-picks">
                         <h3>Editor's Picks</h3>
@@ -58,7 +73,7 @@ class StoryIndex extends React.Component {
                 </section>
                 <section className="index-section-2">
                     <div className="feed-all">
-                        <h3>My Feed</h3>
+                        <h3>Based on your reading history</h3>
                         <ul className="feed-list">
                             {feedIndex}
                         </ul>

@@ -1,15 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Greeting = ({currentUser, logout, openModal}) => {
 
     return (
         currentUser ? (
             <header className="nav-1">
-                <h1 className="logo">Large</h1>
+                <Link to="/" className="logo"><h1 className="logo">Large</h1></Link>
                 <div className="nav-buttons">
-                    {/* <ul className="user-dropdown-anchor"> */}
-                    {/* <Link to="/stories/new">Write</Link> */}
-                    {/* <Link to={`/users/${user.id}/stories`}>Edit Story</Link> */}
+                    <Link className="nav-1-write" to="stories/new">Write</Link>
                     <button className="nav-1-signout" onClick={logout}>Sign out</button>
                     <button className="user-profile-icon">User</button>
                 </div>
