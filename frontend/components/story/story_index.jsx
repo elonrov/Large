@@ -43,7 +43,7 @@ class StoryIndex extends React.Component {
                             <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
                                 <p className="story-preview">{preview}</p>
                             <h4 className="story-author">{story.author}</h4>
-                            <h5 className="published-date">Feb 14, 2020 · 5 min read ★</h5>
+                <h5 className="published-date">Feb 14, 2020 · {(Math.ceil(Math.random() * 10))} min read ★</h5>
                         </div>
                         <div className="story-thumbnail">
                             <img />

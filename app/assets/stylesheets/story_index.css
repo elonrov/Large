@@ -46,13 +46,15 @@
     padding: 0px; 
     margin: 0px, 40px;
     padding-bottom: 90px;
-    position: relative;
+    /* position: relative; */
 }
 
 .feed-all {
+    display: flex;
+    flex-direction: column;
     align-items: left; 
     left: 15px; 
-    position: absolute; 
+    /* position: absolute;  */
     width: 60%;  
     font-family: 'Merriweather Sans', sans-serif;
 }
@@ -78,12 +80,20 @@
     position: relative;
 }
 
+.popular-container {
+    width: 35%;
+    padding-bottom: 60px;   
+}
+
 .popular {
     /* align-items: right;  */
-    right: 15px; 
-    position: absolute; 
-    width: 35%;
-    padding-bottom: 60px;
+    /* right: 15px;  */
+    /* position: absolute;  */
+    
+    display: flex; 
+    flex-direction: column;
+    position: sticky; 
+    top: 70px;
 }
 
 .popular-list {
