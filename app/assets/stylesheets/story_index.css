@@ -1,0 +1,80 @@
+.index-section-1 {
+    display: flex;
+    padding-top: 65px;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.index-page h3 {
+    color: #2b2b2b; 
+    font-size: 20px;
+    padding-left: 40px;
+}
+
+.editor-picks-list {
+    display: flex; 
+    flex-wrap: nowrap; 
+    height: 375px; 
+    padding-left: 40px;
+}
+
+.editor-pick-story {
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid grey;
+    position: relative;
+}
+
+.index-section-2 {
+    display: flex;
+}
+
+.feed-all {
+    align-items: left; 
+    left: 15px; 
+    position: absolute; 
+    width: 60%;  
+}
+
+.feed-story {
+    padding-bottom: 25px;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.popular {
+    align-items: right; 
+    right: 15px; 
+    position: absolute; 
+    width: 35%;
+    padding-bottom: 60px;
+}
+
+.popular-list {
+    list-style-type: decimal-leading-zero;
+}
+
+.popular-story {
+    padding-bottom: 25px;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.story-title {
+    font-size: 21px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.story-author {
+    font-size: 16px;
+    color: #2b2b2b;
+    margin: 3px 0px;
+    position: absolute; 
+    bottom: 0px;
+}
+
+.story-preview {
+    font-size: 14px;
+    color: grey;
+}

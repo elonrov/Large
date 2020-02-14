@@ -1,7 +1,7 @@
 class Api::StoriesController < ApplicationController 
     
     def index 
-        @stories = Story.all
+        @stories = Story.includes(:author).all
         render :index
     end
 
@@ -23,7 +23,7 @@ class Api::StoriesController < ApplicationController
 
     def update 
         @story = Story.find(params[:id])
-        @user = User.find(@story.author_id)
+        # @user = User.find(@story.author_id)
 
         if @story.update(story_params)
             render :show 

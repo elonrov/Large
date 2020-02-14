@@ -5,7 +5,7 @@ import { fetchAllStories } from '../../actions/story_actions';
 
 const mapStateToProps = (state) => {
     return {
-        stories: Object.values(state.entities.stories)
+        stories: Object.values(state.entities.stories), 
     }
 }; 
 
