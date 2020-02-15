@@ -27,10 +27,22 @@
 }
 
 .editor-picks-list {
-    display: flex; 
-    flex-wrap: nowrap; 
-    height: 375px; 
+    /* display: flex; 
+    flex-wrap: nowrap;  */
+    /* height: 375px;  */
     padding: 0px 40px;
+    display: grid;
+    grid-template-columns: 45% 25% 30%;
+}
+
+.editor-pick-story:first-child {
+    grid-row-start: 1; 
+    grid-row-end: 3;
+}
+
+.editor-pick-story:last-child {
+    grid-column-start: 2;
+    grid-column-end: 4;
 }
 
 .editor-pick-story {
@@ -124,6 +136,7 @@
 .preview {
     display: flex;
     justify-content: space-between;
+    letter-spacing: 1px;
 }
 .story-preview {
     font-size: 14px;

@@ -13,7 +13,7 @@ class StoryIndex extends React.Component {
 
     render () {
 
-        let editorIndex = this.props.stories.slice(0, 6).map((story, i) => {
+        let editorIndex = this.props.stories.slice(0, 5).map((story, i) => {
             const preview = story.body.slice(0, 100) + "...";
             if (i)
             return (
@@ -25,7 +25,7 @@ class StoryIndex extends React.Component {
             )
         });
 
-        let popularIndex = this.props.stories.slice(6, 10).map((story, i) => {
+        let popularIndex = this.props.stories.slice(5, 9).map((story, i) => {
             return (
                 <div className="popular-story" key={`${i}-story.id-${(Math.floor(Math.random() * 1000))}`}>
                     <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
@@ -34,7 +34,7 @@ class StoryIndex extends React.Component {
             )
         });
 
-        let feedIndex = this.props.stories.slice(10).map((story, i) => {
+        let feedIndex = this.props.stories.slice(9).map((story, i) => {
             const preview = story.body.slice(0, 100) + "...";
             if (i)
                 return (
@@ -57,7 +57,7 @@ class StoryIndex extends React.Component {
                 <ul className="categories-list">
                     <li className="category-name">AIRCRAFT</li>
                     <li className="category-name">SHORT/SICK</li>
-                    <li className="category-name">ER-THAN-LIFE</li>
+                    <li className="category-name">R-THAN-LIFE</li>
                     <li className="category-name">SKYSCRAPERS</li>
                     <li className="category-name">CELESTIAL BODIES</li>
                     <li className="category-name">BEASTS/BEHEMOTHS</li>

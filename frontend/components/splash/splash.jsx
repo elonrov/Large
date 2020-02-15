@@ -5,8 +5,9 @@ const Splash = ({openModal}) => {
 
         return (
 
-            <div className="splash" style={{ backgroundImage: `url(${window.splash3})` }} >
-                <section style={{ backgroundImage: `url(${window.splash1})` }} className="image-section-1">
+            // <div className="splash" style={{ backgroundImage: `url(${window.splash3})` }} >
+                <div className="splash">
+                <section className="image-section-1">
                     <section className="section-1">
                         <h1 className="splash-header-1">Like Medium, but bigger.</h1>
                         <h2 className="splash-header-2">big stories about big ideas.</h2>
@@ -24,6 +25,8 @@ const Splash = ({openModal}) => {
                         takes on topics that matter. So whatever your interest, you 
                         can always find fresh thinking and unique perspectives.
                         </p>
+                        <img className="splash-image-1" src={window.splash1} />
+
                     </section>
                 </section>
 
@@ -36,6 +39,7 @@ const Splash = ({openModal}) => {
                 <section className="section-3">
                    
                     {/* <h3>No ads. No problems.</h3> */}
+                    <img className="splash-image-2" src={window.splash3}/>
                     <p className="splash-p-2"> 
                     With the power of the network, different ways to engage 
                     with stories, and the ability to follow your favorite topics, 
