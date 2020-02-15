@@ -129,7 +129,9 @@
     font-size: 14px;
     color: grey;
     font-weight: lighter;
-    width: 75%;
+    /* width: 300px; */
+    min-width: 75%;
+    /* min-width: 300px; */
 }
 
 .story-thumbnail img {

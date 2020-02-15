@@ -40,7 +40,7 @@ class StoryForm extends React.Component {
                         onChange={this.update('body')}/>
                     </label>
                     <div className="story-form-buttons">
-                        <button className="story-form-publish" type="submit">Publish</button>
+                        <button className="story-form-publish" onClick={() => this.props.history.push("/")} type="submit">Publish</button>
                         <button className="story-form-cancel"><Link to="/" className="no-link">Cancel</Link></button>
                     </div>
                 </form>

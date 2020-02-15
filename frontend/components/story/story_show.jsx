@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 class StoryShow extends React.Component {
 
     componentDidMount() {
-        this.props.fetchStory(this.props.match.params.storyId)
+        this.props.fetchStory(this.props.match.params.storyId);
+        window.scrollTo(0, 0)
     };
 
     render () {
