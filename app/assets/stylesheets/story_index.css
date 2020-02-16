@@ -78,6 +78,7 @@
 
 .feed {
     display: flex;
+    justify-content: space-between;
 }
 
 .feed-list {

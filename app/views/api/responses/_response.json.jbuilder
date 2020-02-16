@@ -1,0 +1,1 @@
+json.extract! response, :id, :body, :story_id, :user_id
