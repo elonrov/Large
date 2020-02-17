@@ -18,6 +18,21 @@ class StoryForm extends React.Component {
         return e => this.setState({[field]: e.target.value})
     }; 
 
+    renderErrors() {
+        if (this.props.errors) {
+            return (
+                <ul>
+                    {this.props.errors.map((error, i) => (
+                        <li key={`${i}-error`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            );
+        } else {
+            return "";
+        }
+    };
     
     render () {
 
@@ -39,6 +54,10 @@ class StoryForm extends React.Component {
                         value={this.state.body}
                         onChange={this.update('body')}/>
                     </label>
+                    {/* <label>
+                        <button>Upload an image.</button>
+                    </label> */}
+                    <div className="story-form-errors">{this.renderErrors()}</div>
                     <div className="story-form-buttons">
                         <button className="story-form-publish" onClick={() => this.props.history.push("/")} type="submit">Publish</button>
                         <button className="story-form-cancel"><Link to="/" className="no-link">Cancel</Link></button>
