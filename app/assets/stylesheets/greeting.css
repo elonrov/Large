@@ -77,7 +77,8 @@
     list-style: none;
     border: .6px silver solid;
     background-color: white; 
-    min-height: 300px; 
+    min-height: 300px;
+    /* padding-top: 20px;  */
     padding-left: 0px; 
     box-shadow: 0px 0px 8px #c9c9c9;
 }
