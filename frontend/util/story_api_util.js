@@ -15,10 +15,10 @@ export const fetchStory = (storyId) => {
 
 export const fetchMyStories = (userId) => {
     return $.ajax({
-        url: `/api/users/${userId}/stories`, 
+        url: `/api/users/${userId}`,
         method: 'GET'
     })
-}; 
+};
 
 export const createStory = (story) => {
     return $.ajax({

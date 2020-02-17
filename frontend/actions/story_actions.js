@@ -4,7 +4,6 @@ export const RECEIVE_ALL_STORIES = "RECEIVE_ALL_STORIES";
 export const RECEIVE_STORY = "RECEIVE_STORY"; 
 export const DELETE_STORY = "DELETE_STORY"; 
 export const RECEIVE_STORY_ERRORS = "RECEIVE_STORY_ERRORS";
-// export const RECEIVE_MY_STORIES = "RECEIVE_MY_STORIES"; 
 
 const receiveAllStories = (stories) => {
     return {
@@ -35,13 +34,6 @@ const receiveStoryErrors = (errors) => {
     }
 }; 
 
-// const receiveMyStories = (stories) => {
-//     return {
-//         type: RECEIVE_MY_STORIES, 
-//         stories: stories
-//     }
-// }; 
-
 export const fetchAllStories = () => dispatch => {
     return StoryAPIUtil.fetchStories().then((stories) => 
     dispatch(receiveAllStories(stories)), 
@@ -70,9 +62,4 @@ export const removeStory = (storyId) => dispatch => {
     return StoryAPIUtil.deleteStory(storyId).then(() => 
     dispatch(deleteStory(storyId)), 
     error => (dispatch(receiveStoryErrors(error.responseJSON))));
-}
-
-
-// export const fetchMyStories = (userId) => dispatch => {
-//     return StoryAPIUtil.fetchMyStories(userId).then((stories) => dispatch(receiveMyStories(stories)));
-// };
+};
