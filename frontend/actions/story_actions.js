@@ -4,6 +4,8 @@ export const RECEIVE_ALL_STORIES = "RECEIVE_ALL_STORIES";
 export const RECEIVE_STORY = "RECEIVE_STORY"; 
 export const DELETE_STORY = "DELETE_STORY"; 
 export const RECEIVE_STORY_ERRORS = "RECEIVE_STORY_ERRORS";
+export const CLEAR_STORY_ERRORS = "CLEAR_STORY_ERRORS";
+
 
 const receiveAllStories = (stories) => {
     return {
@@ -33,6 +35,12 @@ const receiveStoryErrors = (errors) => {
         errors: errors
     }
 }; 
+
+export const clearStoryErrors = () => {
+    return {
+        type: CLEAR_STORY_ERRORS, 
+    }
+}
 
 export const fetchAllStories = () => dispatch => {
     return StoryAPIUtil.fetchStories().then((stories) => 

@@ -1,7 +1,7 @@
 .footer-list {
     display: flex;
     /* justify-content: center;  */
-    background-color: #3aab78;
+    background-color: #2b2b2b;
     height: 60px;
     position: fixed;
     bottom: 0px;
@@ -17,14 +17,6 @@
 }
 
 .footer-list-item {
-    /* font-family: 'Merriweather Sans', sans-serif;
-    font-size: 16px;
-    color: white;
-    background-size: contain;  */
-    /* height: 35px; 
-    width: 35px; 
-    background-repeat: no-repeat;
-    background-color: transparent; */
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -43,7 +35,7 @@
 }
 
 .footer-list-item {
-    color: black; 
+    color: white; 
     font-family: 'Merriweather Sans', sans-serif; 
     font-size: 18px;
     text-decoration: none;

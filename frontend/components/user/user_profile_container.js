@@ -1,16 +1,19 @@
 import { connect } from 'react-redux'; 
 
 import UserProfile from './user_profile';
-import { fetchMyStories } from '../../actions/story_actions';
+import { fetchUserStories } from '../../actions/user_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+    const authorId = state.entities.users[ownProps.match.params.userId]
     return {
-        stories: Object.values(state.entities.)
+        stories: state.entities.stories[authorId]
     }
 }; 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchMyStories: 
+        fetchUserStories: () => dispatch(fetchUserStories())
     }
 };
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

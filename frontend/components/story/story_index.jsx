@@ -17,17 +17,17 @@ class StoryIndex extends React.Component {
             const preview = story.body.slice(0, 100) + "...";
             if (i)
             return (
-                <div className="editor-pick-story" key={`${i}-story.id${(Math.floor(Math.random() * 100000))}`}>
+                <div className="editor-pick-story" key={`${i}-${story.id}-${(Math.floor(Math.random() * 1000))}`}>
                     <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
                     <p className="story-preview">{preview}</p>
-                    <h4 className="story-author">{story.author}</h4>
+                    <Link to={`users/${story.author_id}`}><h4 className="story-author">{story.author}</h4></Link>
                 </div>
             )
         });
 
         let popularIndex = this.props.stories.slice(5, 9).map((story, i) => {
             return (
-                <li className="popular-story" key={`${i}-story.id-${(Math.floor(Math.random() * 1000))}`}>
+                <li className="popular-story" key={`${i}-${story.id}-${(Math.floor(Math.random() * 1000))}`}>
                     <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
                     <h4 className="story-author">{story.author}</h4>
                     <h5 className="published-date">Feb 14, 2020 · {(Math.ceil(Math.random() * 10))} min read ★</h5>

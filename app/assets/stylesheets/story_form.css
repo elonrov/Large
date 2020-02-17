@@ -6,10 +6,9 @@
     position: absolute;
     width: 60%;
     left: 20%;
-    /* border: 1px grey solid;  */
     display: flex; 
     flex-direction: column;
-    
+    /* max-height: 500px; */
 }
 
 .form-title {
@@ -17,9 +16,15 @@
     font-family: 'Merriweather Sans', sans-serif;
 }
 
+.story-form-input-title::placeholder, .story-form-input-body::placeholder {
+    font-family: 'Playfair Display', serif;
+    color: silver; 
+    border: none;
+}
+
 .story-form-input-title, .story-form-input-body {
     font-family: 'Playfair Display', serif;
-    color: grey; 
+    color: #2b2b2b;
     border: none;
 }
 
@@ -36,7 +41,7 @@
 .story-form-input-body {
     font-size: 22px;
     width: 100%; 
-    min-height: 425px;
+    min-height: 380px;
     letter-spacing: 1.5px;
     line-height: 1.2;
 }
@@ -45,18 +50,16 @@
     display: flex;
     justify-content: center; 
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     width: 75px; 
-    
 }
-
 
 .story-form-publish, .story-form-cancel {
     width: 150px; 
     border: none; 
     padding: 10px 45px; 
     margin: 0; 
-    font-size: 18px;
+    font-size: 17px;
     border-radius: 4px; 
     font-family: 'Merriweather Sans', sans-serif;
 }
@@ -82,3 +85,48 @@
     color: black; 
     text-decoration: none; 
 }
+
+.story-form-errors {
+    display: flex; 
+    justify-content: center;
+}
+
+.story-errors-list {
+    padding-left: 0px; 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column; 
+    position: relative; 
+    justify-content: center; 
+    bottom: 300px; 
+    font-size: 13px; 
+    font-family: 'Merriweather Sans', sans-serif;
+    box-shadow: 0px 0px 8px #e0a558;
+    width: auto; 
+}
+
+.story-error-div {
+    display: flex;
+    float: left;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.story-error {
+    display: flex;
+    height: 20px;
+    font-family: 'Merriweather Sans', sans-serif ; 
+    font-size: 13px; 
+    /* margin-left: 10px; */
+    padding: 10px; 
+    display: flex; 
+    justify-content: center;
+}
+
+/* .story-errors-list:not(:focus) {
+    display: none;
+}
+
+.story-error:not(:focus) {
+    display: block;
+} */
