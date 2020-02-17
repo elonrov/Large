@@ -9,6 +9,7 @@ class StoryIndex extends React.Component {
 
     componentDidMount () {
         this.props.fetchAllStories(this.props.stories);
+        window.scrollTo(0, 0);
     }
 
     render () {
@@ -29,7 +30,7 @@ class StoryIndex extends React.Component {
             return (
                 <li className="popular-story" key={`${i}-${story.id}-${(Math.floor(Math.random() * 1000))}`}>
                     <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
-                    <h4 className="story-author">{story.author}</h4>
+                    <Link to={`users/${story.author_id}`}><h4 className="story-author">{story.author}</h4></Link>
                     <h5 className="published-date">Feb 14, 2020 · {(Math.ceil(Math.random() * 10))} min read ★</h5>
                 </li>
             )
@@ -42,9 +43,9 @@ class StoryIndex extends React.Component {
                     <div className="feed">
                         <div className="feed-story" key={`${i}-story.id${(Math.floor(Math.random() * 1000))}`}>
                             <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
-                                <p className="story-preview">{preview}</p>
-                            <h4 className="story-author">{story.author}</h4>
-                <h5 className="published-date">Feb 14, 2020 · {(Math.ceil(Math.random() * 10))} min read ★</h5>
+                            <p className="story-preview">{preview}</p>
+                            <Link to={`users/${story.author_id}`}><h4 className="story-author">{story.author}</h4></Link>
+                            <h5 className="published-date">Feb 14, 2020 · {(Math.ceil(Math.random() * 10))} min read ★</h5>
                         </div>
                         <div className="story-thumbnail">
                             <img />
