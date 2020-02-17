@@ -27,10 +27,11 @@ class StoryIndex extends React.Component {
 
         let popularIndex = this.props.stories.slice(5, 9).map((story, i) => {
             return (
-                <div className="popular-story" key={`${i}-story.id-${(Math.floor(Math.random() * 1000))}`}>
+                <li className="popular-story" key={`${i}-story.id-${(Math.floor(Math.random() * 1000))}`}>
                     <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
                     <h4 className="story-author">{story.author}</h4>
-                </div>
+                    <h5 className="published-date">Feb 14, 2020 · {(Math.ceil(Math.random() * 10))} min read ★</h5>
+                </li>
             )
         });
 

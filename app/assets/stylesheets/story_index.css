@@ -66,7 +66,6 @@
     flex-direction: column;
     align-items: left; 
     left: 15px; 
-    /* position: absolute;  */
     width: 60%;  
     font-family: 'Merriweather Sans', sans-serif;
 }
@@ -99,18 +98,23 @@
 }
 
 .popular {
-    /* align-items: right;  */
-    /* right: 15px;  */
-    /* position: absolute;  */
-    
     display: flex; 
     flex-direction: column;
     position: sticky; 
     top: 70px;
+    padding-left: 25px;
+}
+
+.popular h3 {
+    margin-left: 12px;
 }
 
 .popular-list {
     list-style-type: decimal-leading-zero;
+}
+
+.popular-list::marker {
+    color: blue;
 }
 
 .popular-story {
@@ -127,7 +131,7 @@
 }
 
 .story-author {
-    font-size: 14px;
+    font-size: 13px;
     color: #474747;
     margin: 5px 0px;
     position: absolute; 
@@ -156,6 +160,8 @@
 
 .published-date {
     margin: 0; 
-    color: #474747;
+    color: #757575;
+    font-size: 11px;
+    font-weight: lighter;
 }
 
