@@ -12,7 +12,6 @@ class Api::StoriesController < ApplicationController
 
     def create
         @story = Story.new(story_params)
-        # debugger
         @story.author_id = current_user.id 
         @user = User.find(@story.author_id)
         if @story.save

@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 class StoryForm extends React.Component {
     constructor(props) {
         super(props); 
-        this.state = this.props.story;
+        this.state = {
+            story: this.props.story, 
+            photoFile: null
+        };
 
         this.handleSubmit = this.handleSubmit.bind(this); 
         this.update = this.update.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     };
 
     handleSubmit(e) {
@@ -20,6 +24,10 @@ class StoryForm extends React.Component {
     update(field) {
         return e => this.setState({ [field]: e.target.value })
     }; 
+
+    handleFile(e) {
+        this.setState({photoFile: e.currentTarget.files[0]})
+    }
 
     renderErrors() {
         if (this.props.errors) {
@@ -59,9 +67,10 @@ class StoryForm extends React.Component {
                         onClick={this.props.clearErrors}
                         onChange={this.update('body')}/>
                     </label>
-                    {/* <label>
-                        <button>Upload an image.</button>
-                    </label> */}
+                    <label>Upload an image
+                        <input type="file" 
+                        onChange={this.handleFile}/>
+                    </label>
                     <div className="story-form-errors">{this.renderErrors()}</div>
                     <div className="story-form-buttons">
                         <button className="story-form-publish" type="submit">Publish</button>
