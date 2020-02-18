@@ -14,9 +14,30 @@ class StoryForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     };
 
+    // handleSubmit(e) {
+    //     e.preventDefault(); 
+    //     this.props.action(this.state).then(({story}) => {
+    //         this.props.history.push(`/stories/${story.id}`)
+    //     });
+    // }; 
+
     handleSubmit(e) {
         e.preventDefault(); 
-        this.props.action(this.state).then(({story}) => {
+        const formData = new FormData(); 
+        formData.append('story[title]', this.state.title); 
+        formData.append('story[body]', this.state.body);
+
+        if (this.state.photoFile) {
+            formData.append('story[photo]', this.state.photoFile); 
+        }
+
+        $.ajax({
+            url: '/api/stories', 
+            method: 'POST', 
+            data: formData, 
+            contentType: false, 
+            processData: false
+        }).then(({ story }) => {
             this.props.history.push(`/stories/${story.id}`)
         });
     }; 
@@ -26,7 +47,18 @@ class StoryForm extends React.Component {
     }; 
 
     handleFile(e) {
-        this.setState({photoFile: e.currentTarget.files[0]})
+        e.preventDefault(); 
+        const reader = new FileReader(); 
+        const file = e.currentTarget.files[0];
+        reader.onloadend = () => 
+            this.setState({ photoUrl: reader.result, photoFile: file});
+        
+        if (file) {
+            reader.readAsDataURL(file); 
+        } else {
+            this.setState({photoUrl: "", photoFile: null});
+        }
+            // this.setState({photoFile: e.currentTarget.files[0]})
     }
 
     renderErrors() {

@@ -1,5 +1,5 @@
 json.story do 
-    json.photoUrl url_for(story.photo)
+    # json.photoUrl url_for(story.photo)
     json.partial! "api/stories/story", story: @story
 end
 

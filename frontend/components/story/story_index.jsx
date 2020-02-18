@@ -14,19 +14,41 @@ class StoryIndex extends React.Component {
 
     render () {
 
-        let editorIndex = this.props.stories.slice(0, 5).map((story, i) => {
-            const preview = story.body.slice(0, 100) + "...";
+        let editorIndexPrimary = this.props.stories.slice(0, 3).map((story, i) => {
+            const preview = story.body.slice(0, 170) + "...";
             if (i)
             return (
-                <div className="editor-pick-story" key={`${i}-${story.id}-${(Math.floor(Math.random() * 1000))}`}>
-                    <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
-                    <p className="story-preview">{preview}</p>
-                    <Link to={`users/${story.author_id}`}><h4 className="story-author">{story.author}</h4></Link>
+                <div className="editor-pick-story-primary">
+                    <div className="story-minus-pic">
+                        <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
+                        <p className="story-preview">{preview}</p>
+                        <Link to={`users/${story.author_id}`}><h4 className="story-author">By {story.author}</h4></Link>
+                    </div>
+                    <div className="story-thumbnail-primary">
+                            <img src={story.photo_url}></img>
+                    </div>
                 </div>
             )
         });
+        
+        let editorIndexTertiary = this.props.stories.slice(4, 8).map((story, i) => {
+            const preview = story.body.slice(0, 150) + "...";
+            if (i)
+                return (
+                    <div className="editor-pick-story-tertiary">
+                        <div>
+                            <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
+                            <p className="story-preview">{preview}</p>
+                            <Link to={`users/${story.author_id}`}><h4 className="story-author-tert">By {story.author}</h4></Link>
+                        </div>
+                        <div className="story-thumbnail-tertiary">
+                                <img className="tert-pic" src={story.photo_url}></img>
+                        </div>
+                    </div>
+                )
+        });
 
-        let popularIndex = this.props.stories.slice(5, 9).map((story, i) => {
+        let popularIndex = this.props.stories.slice(8, 12).map((story, i) => {
             return (
                 <li className="popular-story" key={`${i}-${story.id}-${(Math.floor(Math.random() * 1000))}`}>
                     <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
@@ -36,8 +58,8 @@ class StoryIndex extends React.Component {
             )
         });
 
-        let feedIndex = this.props.stories.slice(9).map((story, i) => {
-            const preview = story.body.slice(0, 100) + "...";
+        let feedIndex = this.props.stories.slice(12).map((story, i) => {
+            const preview = story.body.slice(0, 130) + "...";
             if (i)
                 return (
                     <div className="feed">
@@ -47,8 +69,8 @@ class StoryIndex extends React.Component {
                             <Link to={`users/${story.author_id}`}><h4 className="story-author">{story.author}</h4></Link>
                             <h5 className="published-date">Feb 14, 2020 · {(Math.ceil(Math.random() * 10))} min read ★</h5>
                         </div>
-                        <div className="story-thumbnail">
-                            <img />
+                        <div className="story-thumbnail-feed">
+                            <img src={story.photo_url}></img>
                         </div>
                     </div>
                 )
@@ -65,11 +87,14 @@ class StoryIndex extends React.Component {
                     <li className="category-name">BEASTS/BEHEMOTHS</li>
                     <li className="category-name">MOUNTAINS</li>
                 </ul>
+                    <h3 className="editors-h3">Editor's Picks</h3>
                 <section className="index-section-1">
                     <div className="editor-picks">
-                        <h3>Editor's Picks</h3>
-                        <ul className="editor-picks-list">
-                            {editorIndex}
+                        <ul className="editor-picks-list primary">
+                            {editorIndexPrimary}
+                        </ul>
+                        <ul className="editor-picks-list tertiary">
+                            {editorIndexTertiary}
                         </ul>
                     </div>
                 </section>

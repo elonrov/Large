@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
 
 Story.destroy_all
 User.destroy_all 
@@ -34,6 +35,7 @@ Shrek = User.create!(username: "Shrek", password: "verybig")
 
 story1 = Story.create!(title: "Blue Whales and Other Sea Giants", body: body, author_id: King.id)
 story2 = Story.create!(title: "Russia & Canada: The Two Biggest Countries", body: body, author_id: Hanks.id)
+story3 = Story.create!(title: "Goldilocks Almost Had It", body: body, author_id: Shrek.id)
 story4 = Story.create!(title: "Taller than Gandalf, Shorter than Hagrid", body: body, author_id: Biggie.id)
 story5 = Story.create!(title: "The Humongous Fungus", body: body, author_id: Andre.id )
 story6 = Story.create!(title: "Not Tupac, but ______", body: body, author_id: Biggie.id)
@@ -54,4 +56,73 @@ story20 = Story.create!(title: "Not Babies", body: body, author_id: Brienne.id )
 story21 = Story.create!(title: "My History with Dinosaurs", body: body, author_id: BFG.id )
 story22 = Story.create!(title: "Memoirs of a Big Thinker", body: body, author_id: Shrek.id)
 story23 = Story.create!(title: "Smaller?? No thank you.", body: body, author_id: BFG.id )
-story24 = Story.create!(title: "Goldilocks Almost Had It", body: body, author_id: Shrek.id)
+
+
+photo1 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-bikini.png")
+story1.photo.attach(io: photo1, filename: "open-doodles-bikini.png")
+
+photo2 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-chilling.png")
+story2.photo.attach(io: photo2, filename: "open-doodles-chilling.png")
+
+photo3 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-clumsy.png")
+story3.photo.attach(io: photo3, filename: "open-doodles-clumsy.png")
+
+photo4 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-coffee.png")
+story4.photo.attach(io: photo4, filename: "open-doodles-coffee.png")
+
+photo5 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-dancing.png")
+story5.photo.attach(io: photo5, filename: "open-doodles-dancing.png")
+
+photo6 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-dog-jumping.png")
+story6.photo.attach(io: photo6, filename: "open-doodles-dog-jumping.png")
+
+photo7 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-doggie.png")
+story7.photo.attach(io: photo7, filename: "open-doodles-doggie.png")
+
+photo8 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-float.png")
+story8.photo.attach(io: photo8, filename: "open-doodles-float.png")
+
+photo9 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-groovy.png")
+story9.photo.attach(io: photo9, filename: "open-doodles-groovy.png")
+
+photo10 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-ice-cream.png")
+story10.photo.attach(io: photo10, filename: "open-doodles-ice-cream.png")
+
+photo11 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-jumping.png")
+story11.photo.attach(io: photo11, filename: "open-doodles-jumping.png")
+
+photo12 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-laying.png")
+story12.photo.attach(io: photo12, filename: "open-doodles-laying.png")
+
+photo13 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-levitate.png")
+story13.photo.attach(io: photo13, filename: "open-doodles-levitate.png")
+
+photo14 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-loving.png")
+story14.photo.attach(io: photo14, filename: "open-doodles-loving.png")
+
+photo15 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-moshing.png")
+story15.photo.attach(io: photo15, filename: "open-doodles-moshing.png")
+
+photo16 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-petting.png")
+story16.photo.attach(io: photo16, filename: "open-doodles-petting.png")
+
+photo17 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-plant.png")
+story17.photo.attach(io: photo17, filename: "open-doodles-plant.png")
+
+photo18 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-reading-side.png")
+story18.photo.attach(io: photo18, filename: "open-doodles-reading-side.png")
+
+photo19 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-reading.png")
+story19.photo.attach(io: photo19, filename: "open-doodles-reading.png")
+
+photo20 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-roller-skating.png")
+story20.photo.attach(io: photo20, filename: "open-doodles-roller-skating.png")
+
+photo21 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-rolling.png")
+story21.photo.attach(io: photo21, filename: "open-doodles-rolling.png")
+
+photo22 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-selfie.png")
+story22.photo.attach(io: photo22, filename: "open-doodles-selfie.png")
+
+photo23 = open("https://large-aa-seeds.s3.amazonaws.com/open-doodles-sitting-and-reading.png")
+story23.photo.attach(io: photo23, filename: "open-doodles-sitting-and-reading.png")

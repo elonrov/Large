@@ -49,10 +49,18 @@
     color: grey;
 }
 
+.story-cover-container {
+    display: flex;
+}
+
 .story-cover-photo {
-    height: 300px; 
-    border: 2px solid red;
+    max-height: 375px; 
+    border: 1px solid silver;
+    justify-content: center;
     margin: 40px 0px;
+    padding: 0px 65px; 
+    width: 100%;
+
 }
 
 .story-show p {

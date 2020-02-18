@@ -12,14 +12,17 @@ class StoryShow extends React.Component {
         let title; 
         let body; 
         let author;
+        let photoFile;
         if (this.props.story) {
             title = this.props.story.title;
             author = this.props.author.username;
             body = this.props.story.body; 
+            photoFile = this.props.story.photo_url;
         } else {
             title = ""; 
             body = ""; 
             author = "";
+            photoFile = "";
         }
       
         return (
@@ -33,8 +36,8 @@ class StoryShow extends React.Component {
                         <img></img>
                         <div className="date">Feb 14 · 5 min read ★</div>
                     </div>
-                    <div className="story-cover-photo">
-                        <img></img>
+                    <div className="story-cover-container">
+                        <img className="story-cover-photo" src={photoFile}></img>
                     </div>
                     <p>{body}</p>
                     {/* <Link to="/">Back to Feed</Link> */}
