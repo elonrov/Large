@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
     }
 
     demoLogin() {
-        return this.props.processDemo({username: "Demouser", password: "demopw"})
+        return this.props.processDemo({ username: "Demo User", password: "demopw"})
     }
 
     renderErrors() {

@@ -83,26 +83,36 @@ class StoryForm extends React.Component {
         return (
             <div className="story-form-page">
                 <form className="story-form" onSubmit={this.handleSubmit}>
-                    <label>
-                        <input className="story-form-input-title" 
-                        type="text" 
-                        placeholder="Title"
-                        value={this.state.title} 
-                        onClick={this.props.clearErrors}
-                        onChange={this.update('title')}/>
-                    </label>
-                    <br />
-                    <label> 
-                        <textarea className="story-form-input-body"
-                        placeholder="Tell your story..."
-                        value={this.state.body}
-                        onClick={this.props.clearErrors}
-                        onChange={this.update('body')}/>
-                    </label>
-                    <label>Upload an image
-                        <input type="file" 
-                        onChange={this.handleFile}/>
-                    </label>
+                    <div className="upload-button-inputs">
+                        <div className="upload-button">
+                            <img src={window.photoupload}></img>
+                            <label className="story-form-photo-label">Upload a cover photo.
+                                <input
+                                    type="file"
+                                    // className="story-form-input-photo"
+                                    onChange={this.handleFile}>
+                                </input>
+                            </label>
+                        </div>
+                        <div className="inputs">
+                            <label>
+                                <input className="story-form-input-title" 
+                                type="text" 
+                                placeholder="Title"
+                                value={this.state.title} 
+                                onClick={this.props.clearErrors}
+                                onChange={this.update('title')}/>
+                            </label>
+                            <br />
+                            <label> 
+                                <textarea className="story-form-input-body"
+                                placeholder="Tell your story..."
+                                value={this.state.body}
+                                onClick={this.props.clearErrors}
+                                onChange={this.update('body')}/>
+                            </label>
+                        </div>
+                    </div>
                     <div className="story-form-errors">{this.renderErrors()}</div>
                     <div className="story-form-buttons">
                         <button className="story-form-publish" type="submit">Publish</button>

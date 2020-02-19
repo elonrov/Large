@@ -36,6 +36,7 @@ class Api::StoriesController < ApplicationController
         @story = Story.find(params[:id])
 
         @story.destroy
+        @stories = Story.includes(:author).all
         render :index
     end
 

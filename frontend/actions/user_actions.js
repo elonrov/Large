@@ -1,16 +1,16 @@
 import * as UserApiUtil from '../util/user_api_util';
 
-export const RECEIVE_USER_STORIES = "RECEIVE_USER_STORIES"; 
+export const RECEIVE_USER = "RECEIVE_USER"; 
 
-const receiveUserStories = (stories) => {
+const receiveUser = (user) => {
     return {
-        type: RECEIVE_USER_STORIES, 
-        stories: stories
+        type: RECEIVE_USER, 
+        user: user
     }
 }; 
 
-export const fetchUserStories = (userId) => dispatch => {
-    return UserApiUtil.fetchUserStories(userId).then((stories) => 
-    dispatch(receiveUserStories(stories)), 
-    error => (dispatch(receiveStoryErrors(error.responseJSON))));
+export const fetchUser = (userId) => dispatch => {
+    return UserApiUtil.fetchUser(userId).then((user) => 
+    dispatch(receiveUser(user)), 
+    error => (dispatch(receiveUserErrors(error.responseJSON))));
 };

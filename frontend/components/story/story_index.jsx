@@ -14,21 +14,38 @@ class StoryIndex extends React.Component {
 
     render () {
 
-        let editorIndexPrimary = this.props.stories.slice(0, 3).map((story, i) => {
-            const preview = story.body.slice(0, 170) + "...";
+        let editorIndexPrimary = this.props.stories.slice(0, 2).map((story, i) => {
+            const preview = story.body.slice(0, 225) + "...";
             if (i)
             return (
                 <div className="editor-pick-story-primary">
                     <div className="story-minus-pic">
                         <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
+                        <Link to={`users/${story.author_id}`} className="story-author"><h4>By {story.author}</h4></Link>
                         <p className="story-preview">{preview}</p>
-                        <Link to={`users/${story.author_id}`}><h4 className="story-author">By {story.author}</h4></Link>
                     </div>
                     <div className="story-thumbnail-primary">
                             <img src={story.photo_url}></img>
                     </div>
                 </div>
             )
+        });
+
+        let editorIndexSecondary = this.props.stories.slice(2, 4).map((story, i) => {
+            const preview = story.body.slice(0, 170) + "...";
+            if (i)
+                return (
+                    <div className="editor-pick-story-secondary">
+                        <div className="story-minus-pic">
+                            <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
+                            <Link to={`users/${story.author_id}`} className="story-author"><h4>By {story.author}</h4></Link>
+                            <p className="story-preview">{preview}</p>
+                        </div>
+                        <div className="story-thumbnail-secondary">
+                            <img src={story.photo_url}></img>
+                        </div>
+                    </div>
+                )
         });
         
         let editorIndexTertiary = this.props.stories.slice(4, 8).map((story, i) => {
@@ -38,8 +55,8 @@ class StoryIndex extends React.Component {
                     <div className="editor-pick-story-tertiary">
                         <div>
                             <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
-                            <p className="story-preview">{preview}</p>
                             <Link to={`users/${story.author_id}`}><h4 className="story-author-tert">By {story.author}</h4></Link>
+                            <p className="story-preview">{preview}</p>
                         </div>
                         <div className="story-thumbnail-tertiary">
                                 <img className="tert-pic" src={story.photo_url}></img>
@@ -95,6 +112,9 @@ class StoryIndex extends React.Component {
                         </ul>
                         <ul className="editor-picks-list tertiary">
                             {editorIndexTertiary}
+                        </ul>
+                        <ul className="editor-picks-list secondary">
+                            {editorIndexSecondary}
                         </ul>
                     </div>
                 </section>

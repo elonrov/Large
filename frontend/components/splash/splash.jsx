@@ -5,15 +5,11 @@ const Splash = ({openModal}) => {
 
         return (
 
-            // <div className="splash" style={{ backgroundImage: `url(${window.splash3})` }} >
                 <div className="splash">
                 <section className="image-section-1">
                     <section className="section-1">
                         <h1 className="splash-header-1">Like Medium, but bigger.</h1>
-                        <h2 className="splash-header-2">big stories about big ideas.</h2>
-                        {/* <h3 className="splash-header-3">An exercise in pixel-perfect cloning, by Elon Rov.</h3> */}
-                        
-                        {/* <img style={{ backgroundImage: `url(${window.splash1})` }} className="splash-image" /> */}
+                        <h2 className="splash-header-2">big stories about big ideas.</h2>           
                     </section>
                 
 
@@ -38,7 +34,6 @@ const Splash = ({openModal}) => {
 
                 <section className="section-3">
                    
-                    {/* <h3>No ads. No problems.</h3> */}
                     <img className="splash-image-2" src={window.splash3}/>
                     <p className="splash-p-2"> 
                     With the power of the network, different ways to engage 
