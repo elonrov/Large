@@ -1,5 +1,7 @@
 .user-profile {
-    padding: 70px 60px; 
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 70px; 
     display: flex; 
     flex-direction: column;
     align-items: center;
@@ -30,7 +32,7 @@
     box-shadow: 0px 0px 14px #b5b3b3;
     border-radius: 4px;
     padding: 25px;
-    margin: 25px 0px;
+    margin: 40px 0px;
 }
 
 .user-stories-list {
@@ -38,10 +40,11 @@
 }
 
 .profile-story-title {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 30px; 
+    font-family: 'Amiri', serif;
+    font-size: 40px; 
     color: #2b2b2b; 
     font-weight: bolder;
+    letter-spacing: 1px;
 }
 
 .profile-story-body {
@@ -72,4 +75,17 @@
 
 a {
     color: white;
+}
+
+.profile-story-cover-container {
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+    border: 1px solid silver;
+}
+
+.profile-story-cover-photo {
+    max-height: 450px;
+    width: 50%;
+    padding: 10px;
 }

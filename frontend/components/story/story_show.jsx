@@ -11,13 +11,15 @@ class StoryShow extends React.Component {
     render () {
         let title; 
         let body; 
-        let author;
+        let authorname;
         let photoFile;
+        let authId;
         if (this.props.story) {
             title = this.props.story.title;
-            author = this.props.author.username;
+            authorname = this.props.author.username;
             body = this.props.story.body; 
             photoFile = this.props.story.photo_url;
+            authId = this.props.author.id
         } else {
             title = ""; 
             body = ""; 
@@ -32,8 +34,7 @@ class StoryShow extends React.Component {
                     <h2 className="title">{title}</h2>
                     <h4 className="subtitle">Of considerable or relatively great size, extent, or capacity.</h4>
                     <div className="author">
-                        <h4 className="author-name">{author}</h4>
-                        <img></img>
+                        <Link to={`/users/${this.props.story.author_id}`}><h4 className="show-author-name">By {authorname}</h4></Link>
                         <div className="date">Feb 14 · 5 min read ★</div>
                     </div>
                     <div className="story-cover-container">

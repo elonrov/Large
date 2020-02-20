@@ -42,8 +42,8 @@ class UserProfile extends React.Component {
             if (user.id === this.props.currentUser.id) {
                 editButtons = <div
                     className="profile-story-buttons">
-                    <button onClick={() => this.props.removeStory(story.id)}>Delete Story</button>
                     <button><Link to={`/stories/${story.id}/edit`}>Update Story</Link></button>
+                    <button onClick={() => this.props.removeStory(story.id)}>Delete Story</button>
                 </div>
             } else {
                 editButtons = ""
@@ -53,7 +53,10 @@ class UserProfile extends React.Component {
                 <div className="user-profile-story" key={`${i}`}>
                     <Link className="profile-story-title" to={`/stories/${story.id}`}>{story.title}</Link>
                     <p className="profile-story-date profile-user-details">Published on Feb 14, 2020</p>
-                    <p className="profile-story-body">{story.body.slice(0, 900)} ...</p>
+                    <div className="profile-story-cover-container">
+                        <img className="profile-story-cover-photo" src={story.photo_url}></img>
+                    </div>
+                    <p className="profile-story-body">{story.body.slice(0, 400)} ...</p>
                     <div>{editButtons}</div>
                 </div>
             )

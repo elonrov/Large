@@ -24,7 +24,6 @@ const mapDispatchToProps = (dispatch) => {
         fetchUser: (userId) => dispatch(fetchUser(userId)), 
         fetchAllStories: (stories) => dispatch(fetchAllStories(stories)), 
         removeStory: (storyId) => dispatch(removeStory(storyId))
-        // updateStory: (story) => dispatch(updateStory)
     }
 };
 

@@ -5,6 +5,8 @@
 }
 
 .responses {
+    display: flex; 
+    justify-content: center;
     background-color: #edebeb;
     margin-bottom: 90px; 
     width: 100%; 
@@ -30,16 +32,21 @@
     letter-spacing: 1px;
 }
 
-.author {
+/* .author {
     font-family: 'Merriweather Sans', sans-serif;
     font-size: 12px;
     color: grey;
     margin: 20px 0px;
     line-height: .7; 
-}
+} */
 
-.author-name {
-     margin: 0;
+.show-author-name {
+    margin: 0;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 12px;
+    color: grey;
+    margin: 15px 0px;
+    line-height: .7; 
 }
 
 .date {
@@ -51,16 +58,15 @@
 
 .story-cover-container {
     display: flex;
+    justify-content: center;
+    border: 1px solid #2b466e;
+    width: 100%;
+    max-height: 375px; 
 }
 
 .story-cover-photo {
     max-height: 375px; 
-    border: 1px solid silver;
-    justify-content: center;
-    margin: 40px 0px;
-    padding: 0px 65px; 
-    width: 100%;
-
+    padding: 10px; 
 }
 
 .story-show p {

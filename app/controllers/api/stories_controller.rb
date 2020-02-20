@@ -22,7 +22,7 @@ class Api::StoriesController < ApplicationController
     end
 
     def update 
-        @story = Story.find(params[:id])
+        @story = Story.find(params[:story][:id])
         # @user = User.find(@story.author_id)
 
         if @story.update(story_params)

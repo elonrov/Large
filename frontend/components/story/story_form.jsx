@@ -33,7 +33,7 @@ class StoryForm extends React.Component {
         formData.append('story[id]', this.state.story.id);
         // formData.append('story[author]', this.props.currentUser.username);
         // formData.append('story[author_id]', this.props.currentUser.id);
-
+        // debugger
         this.props.action(formData).then(({ story }) => {
             this.props.history.push(`/stories/${story.id}`)
         });
