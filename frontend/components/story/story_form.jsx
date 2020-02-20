@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class StoryForm extends React.Component {
     constructor(props) {
@@ -130,4 +130,4 @@ class StoryForm extends React.Component {
     };
 }; 
 
-export default StoryForm;
+export default withRouter(StoryForm);

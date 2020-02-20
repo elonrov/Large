@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = (props) => {
     return (
         <ul className="footer-list">
-            {/* <li className="footer-list-header">Created by Elon Rov</li> */}
+            <p className="footer-list-item">Images courtesy of Ouch.pics</p>
             <li className="connect-icons">
                 <a href="https://elonrov.com" 
                     className="footer-list-item">
