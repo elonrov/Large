@@ -93,15 +93,14 @@
     justify-content: center; 
     margin: 0 auto;
     margin-bottom: 150px;
-    width: 75px; 
 }
 
 .story-form-publish, .story-form-cancel {
-    width: 150px; 
+    width: 200px; 
     border: none; 
-    padding: 10px 45px; 
+    padding: 10px 30px; 
     margin: 0; 
-    font-size: 17px;
+    font-size: 15px;
     border-radius: 4px; 
     font-family: 'Merriweather Sans', sans-serif;
 }
@@ -131,6 +130,7 @@
 .story-form-errors {
     display: flex; 
     justify-content: center;
+    z-index: 10;
 }
 
 .story-errors-list {
@@ -152,6 +152,7 @@
     float: left;
     align-items: center;
     padding: 5px 20px;
+    /* z-index: 9; */
 }
 
 .story-error {

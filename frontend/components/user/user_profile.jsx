@@ -6,6 +6,7 @@ class UserProfile extends React.Component {
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.userId);
         this.props.fetchAllStories();
+        window.scrollTo(0, 0);
     }
 
     render () {
@@ -23,20 +24,31 @@ class UserProfile extends React.Component {
             })
         })
 
-        let editButtons;
-        authoredStories.forEach(story => {
+        // let editButtons;
+        // authoredStories.forEach(story => {
+        //     if (user.id === this.props.currentUser.id) {
+        //         editButtons = <div 
+        //         className="profile-story-buttons">
+        //             <button onClick={() => this.props.removeStory(story.id)}>Delete Story</button>
+        //             <button><Link to={`/stories/${story.id}/edit`}>Update Story</Link></button>
+        //         </div>
+        //     } else {
+        //         editButtons = ""
+        //     }
+        // });
+
+        const profileStories = authoredStories.map((story, i) => {
+            let editButtons;
             if (user.id === this.props.currentUser.id) {
-                editButtons = <div 
-                className="profile-story-buttons">
+                editButtons = <div
+                    className="profile-story-buttons">
                     <button onClick={() => this.props.removeStory(story.id)}>Delete Story</button>
-                    <button>Update Story</button>
+                    <button><Link to={`/stories/${story.id}/edit`}>Update Story</Link></button>
                 </div>
             } else {
                 editButtons = ""
-            }
-        });
-
-        const profileStories = authoredStories.map((story, i) => {
+            };
+            
             return (
                 <div className="user-profile-story" key={`${i}`}>
                     <Link className="profile-story-title" to={`/stories/${story.id}`}>{story.title}</Link>

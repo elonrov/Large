@@ -28,6 +28,7 @@
 .user-profile-story {
     border: 1px solid grey; 
     box-shadow: 0px 0px 14px #b5b3b3;
+    border-radius: 4px;
     padding: 25px;
     margin: 25px 0px;
 }
@@ -67,4 +68,8 @@
     font-family: 'Merriweather Sans', sans-serif;
     color: white; 
     background-color: #3aab78;
+}
+
+a {
+    color: white;
 }

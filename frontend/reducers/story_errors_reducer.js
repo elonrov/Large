@@ -2,6 +2,7 @@ import { RECEIVE_STORY_ERRORS, CLEAR_STORY_ERRORS } from '../actions/story_actio
 
 const storyErrorsReducer = (state = [], action) => {
     Object.freeze(state); 
+    // let newState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_STORY_ERRORS:
             if (action.errors) {

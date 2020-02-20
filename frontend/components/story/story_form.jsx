@@ -14,36 +14,36 @@ class StoryForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     };
 
-    // handleSubmit(e) {
-    //     e.preventDefault(); 
-    //     this.props.action(this.state).then(({story}) => {
-    //         this.props.history.push(`/stories/${story.id}`)
-    //     });
-    // }; 
+    componentDidMount () {
+        window.scrollTo(0, 0);
+    }
 
     handleSubmit(e) {
         e.preventDefault(); 
         const formData = new FormData(); 
-        formData.append('story[title]', this.state.title); 
-        formData.append('story[body]', this.state.body);
-
+        if (this.state.story.title) {
+            formData.append('story[title]', this.state.story.title); 
+        };
+        if (this.state.story.body) {
+            formData.append('story[body]', this.state.story.body);
+        };
         if (this.state.photoFile) {
             formData.append('story[photo]', this.state.photoFile); 
-        }
+        };
+        formData.append('story[id]', this.state.story.id);
+        // formData.append('story[author]', this.props.currentUser.username);
+        // formData.append('story[author_id]', this.props.currentUser.id);
 
-        $.ajax({
-            url: '/api/stories', 
-            method: 'POST', 
-            data: formData, 
-            contentType: false, 
-            processData: false
-        }).then(({ story }) => {
+        this.props.action(formData).then(({ story }) => {
             this.props.history.push(`/stories/${story.id}`)
         });
     }; 
 
     update(field) {
-        return e => this.setState({ [field]: e.target.value })
+        return e => {
+            let newStory = Object.assign({}, this.state.story, { [field]: e.target.value })
+            this.setState({story: newStory})
+        }
     }; 
 
     handleFile(e) {
@@ -76,9 +76,15 @@ class StoryForm extends React.Component {
         } else {
             return "";
         }
-    };
+    }; 
     
     render () {
+
+        const updateButton = (this.props.formType === "Edit Story") ? (
+            "Update Story"
+        ) : (
+            "Publish"
+        );
 
         return (
             <div className="story-form-page">
@@ -99,7 +105,7 @@ class StoryForm extends React.Component {
                                 <input className="story-form-input-title" 
                                 type="text" 
                                 placeholder="Title"
-                                value={this.state.title} 
+                                value={this.state.story.title} 
                                 onClick={this.props.clearErrors}
                                 onChange={this.update('title')}/>
                             </label>
@@ -107,7 +113,7 @@ class StoryForm extends React.Component {
                             <label> 
                                 <textarea className="story-form-input-body"
                                 placeholder="Tell your story..."
-                                value={this.state.body}
+                                value={this.state.story.body}
                                 onClick={this.props.clearErrors}
                                 onChange={this.update('body')}/>
                             </label>
@@ -115,7 +121,7 @@ class StoryForm extends React.Component {
                     </div>
                     <div className="story-form-errors">{this.renderErrors()}</div>
                     <div className="story-form-buttons">
-                        <button className="story-form-publish" type="submit">Publish</button>
+                        <button className="story-form-publish" type="submit">{updateButton}</button>
                         <button className="story-form-cancel" type="button"><Link to="/" className="no-link">Cancel</Link></button>
                     </div>
                 </form>
