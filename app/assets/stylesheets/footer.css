@@ -1,11 +1,9 @@
 .footer-list {
     display: flex;
-    /* justify-content: center;  */
     background-color: #2b2b2b;
     height: 70px;
     position: fixed;
     bottom: 0px;
-    /* width: 100%;  */
     justify-content: space-between;
     margin-bottom: 0px; 
     align-items: center;
