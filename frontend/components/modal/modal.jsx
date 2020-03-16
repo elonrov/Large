@@ -35,10 +35,10 @@ const mapStateToProps = (state) => {
     }
 }; 
 
-const mapDispathToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         closeModal: () => dispatch(closeModal())
     }
 }; 
 
-export default connect(mapStateToProps, mapDispathToProps)(Modal);
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
