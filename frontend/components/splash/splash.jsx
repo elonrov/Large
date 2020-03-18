@@ -45,6 +45,23 @@ const Splash = ({openModal}) => {
                     <h3 className="splash-header-3">A customizable reading experience, 
                     made just for you.</h3>
                 </section>
+
+                <h1 className="splash-header-1">Get smarter about what matters to you.</h1>
+
+                <section className="section-3">
+
+                    {/* <img className="splash-image-2" src={window.splash3} /> */}
+                    <h3 className="splash-header-3">We do things differently.</h3>
+                    <p className="splash-p-2">
+                        Large is not like any other platform on the internet. 
+                        Our sole purpose is to help you find compelling ideas, 
+                        knowledge, and perspectives. We don’t serve ads—we serve you, 
+                        the curious reader who loves to learn new things. Large 
+                        is home to thousands of independent voices, and we combine 
+                        humans and technology to find the best reading for 
+                        you—and filter out the rest.
+                    </p>
+                </section>
                 
                 <section className="section-4">                        
                     <button onClick={() => openModal('signup')} className="signup-button">Get started.</button>

@@ -1,5 +1,5 @@
 class Response < ApplicationRecord 
-    validates :body, presence: true
+    validates :body, :story_id, :user_id, presence: true
 
     belongs_to :user, 
         primary_key: :id, 

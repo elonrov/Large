@@ -92,7 +92,7 @@ class StoryForm extends React.Component {
                     <div className="upload-button-inputs">
                         <div className="upload-button">
                             <img src={window.photoupload}></img>
-                            <label className="story-form-photo-label">Upload a cover photo.
+                            <label className="story-form-photo-label">Upload a cover photo.<br/>
                                 <input
                                     type="file"
                                     // className="story-form-input-photo"

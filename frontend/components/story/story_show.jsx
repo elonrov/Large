@@ -1,5 +1,7 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
+import ResponseIndexContainer from '../response/response_index_container.js';
+import ResponseFormContainer from '../response/response_form_container.js';
 
 class StoryShow extends React.Component {
 
@@ -43,7 +45,15 @@ class StoryShow extends React.Component {
                     <p>{body}</p>
                     {/* <Link to="/">Back to Feed</Link> */}
                 </div>
-                <div className="responses">Responses Go Here</div>
+                <div className="responses-all">
+                    <h5>Responses</h5>
+                    <div className="response-form-container">
+                        <ResponseFormContainer />
+                    </div>
+                    <div className="responses-section">
+                        <ResponseIndexContainer storyId={this.props.story.id}/>
+                    </div>
+                </div>
             </div>
         )
     }

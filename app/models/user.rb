@@ -13,6 +13,12 @@ class User < ApplicationRecord
     class_name: "Story", 
     dependent: :destroy
 
+  has_many :responses, 
+    primary_key: :id, 
+    foreign_key: :user_id, 
+    class_name: "Response", 
+    dependent: :destroy
+
 
     
   def self.find_by_credentials(username, password)

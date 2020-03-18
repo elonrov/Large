@@ -8,4 +8,9 @@ class Story < ApplicationRecord
         class_name: "User"
     
     has_one_attached :photo
+
+    has_many :responses, 
+        primary_key: :id, 
+        foreign_key: :story_id, 
+        class_name: "Response"
 end
