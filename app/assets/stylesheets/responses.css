@@ -80,6 +80,7 @@
   margin: 15px; 
   margin-bottom: 25px;
   padding: 25px;
+  position: relative;
 }
 
 .response-item {
@@ -100,4 +101,21 @@
 
 .response-body {
   font-family: 'Lora', serif;
+}
+
+.response-delete-button {
+  border: none;
+  background: none;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 16px;
+  color: rgb(184, 182, 182);
+  padding-left: 0px;
+}
+
+.response-delete-button:focus, .response-delete-button:hover {
+  border: 1px solid rgb(214, 91, 91);
+  border-radius: 2px;
+  color: rgb(134, 103, 103);
+  padding-left: 5px;
+
 }

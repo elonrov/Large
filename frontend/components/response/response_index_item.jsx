@@ -33,7 +33,7 @@ const ResponseIndexItem = ({ response, currentUser, deleteResponse }) => {
 
   const published_day = response.date.split('').slice(8, 10).join('');
   const deleteButton = (currentUser.id === response.user_id) ? (
-    <button onClick={() => deleteResponse(response.id)}></button>
+    <button className="response-delete-button" onClick={() => deleteResponse(response.id)}>Delete this response</button>
       ) : (
         "" 
       ); 
@@ -45,9 +45,7 @@ const ResponseIndexItem = ({ response, currentUser, deleteResponse }) => {
           <p className="response-date">{published_month} {published_day}</p>
         </div>
         <p className="response-body">{response.body}</p>
-        <div className="delete-button">
-        {/* buttons to edit and delete, only appear if (currentUser.id === response.user.id)
-        dispatch actions to update or delete from props */}
+        <div className="response-delete">
           {deleteButton}
         </div>
     </div>
