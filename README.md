@@ -8,12 +8,12 @@ Large's backend is built with Ruby on Rails for database management. The fronten
 * An AWS integration is used to store and retrieve story cover images and thumbnails. 
 
 ### Features 
-* User Authentication
+User Authentication
   * Large maintains both frontend and backend user authentication. Client-side validations and errors prevent unnecessary database requests. 
-  * A modal is used to present login and signup forms. 
+  A modal is used to present login and signup forms. 
   ![](app/assets/images/readme/signup.png)
   ![](app/assets/images/readme/usernavmenu.png)
-  * User Profile
+  User Profile
     * Users can visit their own or others' profile pages to view authored stories. 
   ![](app/assets/images/readme/userprof.png)
 * Stories
