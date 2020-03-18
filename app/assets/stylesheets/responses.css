@@ -10,11 +10,19 @@
     margin: 0px;
     min-height: 500px;
     font-family: 'Merriweather Sans', sans-serif;
+    
 }
 
-.responses-all h5 {
-  align-items: left;
+.responses-header {
+  display: flex; 
+  flex-direction: row; 
+  width: 65%;
+}
+.responses-header h5 {
   color: rgb(83, 83, 83);
+  letter-spacing: 2px;
+  margin: 15px;
+  margin-bottom: 5px;
 }
 
 .response-form-container {

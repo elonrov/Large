@@ -46,7 +46,9 @@ class StoryShow extends React.Component {
                     {/* <Link to="/">Back to Feed</Link> */}
                 </div>
                 <div className="responses-all">
-                    <h5>Responses</h5>
+                    <div className="responses-header">
+                        <h5>Responses</h5>
+                    </div>
                     <div className="response-form-container">
                         <ResponseFormContainer />
                     </div>
