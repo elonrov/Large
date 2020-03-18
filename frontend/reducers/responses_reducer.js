@@ -3,7 +3,6 @@ import { merge } from 'lodash';
 
 const responsesReducer = (state = {}, action) => {
   Object.freeze(state);
-  debugger 
   switch (action.type) {
     case RECEIVE_RESPONSES: 
       return action.responses; 

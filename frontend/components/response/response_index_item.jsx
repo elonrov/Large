@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom'; 
 import { Link } from 'react-router-dom';
 
-const ResponseIndexItem = ({ response }) => {
+const ResponseIndexItem = ({ response, currentUser, deleteResponse }) => {
   const month = response.date.split('').slice(5, 7).join('');
   let published_month;
   if (month === '01') {
@@ -32,7 +32,12 @@ const ResponseIndexItem = ({ response }) => {
   }; 
 
   const published_day = response.date.split('').slice(8, 10).join('');
-  
+  const deleteButton = (currentUser.id === response.user_id) ? (
+    <button onClick={() => deleteResponse(response.id)}></button>
+      ) : (
+        "" 
+      ); 
+
   return (
     <div className="response-item-container">
         <div className="response-item">
@@ -40,9 +45,10 @@ const ResponseIndexItem = ({ response }) => {
           <p className="response-date">{published_month} {published_day}</p>
         </div>
         <p className="response-body">{response.body}</p>
-        <div className="edit-buttons">
+        <div className="delete-button">
         {/* buttons to edit and delete, only appear if (currentUser.id === response.user.id)
         dispatch actions to update or delete from props */}
+          {deleteButton}
         </div>
     </div>
   );

@@ -37,7 +37,7 @@ class Api::ResponsesController < ApplicationController
         
         if @response
             @response.destroy
-            render "api/stories/index"
+            render "api/responses/show"
         else
             render json: ["Response not found"], status: 404
         end

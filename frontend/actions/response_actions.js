@@ -42,5 +42,5 @@ export const updateResponse = (response) => dispatch => {
 };
 
 export const deleteResponse = (responseId) => dispatch => {
-  return ResponseAPIUtil.deleteResponse(reponseId).then(() => dispatch(removeResponse(responseId)))
+  return ResponseAPIUtil.deleteResponse(responseId).then(() => dispatch(removeResponse(responseId)))
 }

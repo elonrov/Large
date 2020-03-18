@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchResponses } from '../../actions/response_actions';
+import { fetchResponses, deleteResponse} from '../../actions/response_actions';
 
 import ResponseIndex from './response_index';
 
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchResponses: () => dispatch(fetchResponses())
+    fetchResponses: () => dispatch(fetchResponses()), 
+    deleteResponse: (responseId) => dispatch(deleteResponse(responseId))
   }
 }
 

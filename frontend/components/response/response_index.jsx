@@ -7,7 +7,6 @@ class ResponseIndex extends React.Component {
   }; 
 
   componentDidMount() {
-    debugger
     this.props.fetchResponses(); 
   }
 
@@ -17,7 +16,8 @@ class ResponseIndex extends React.Component {
         <ResponseIndexItem 
           key={response.id}
           response={response}
-          currentUser={this.props.currentUser} />
+          currentUser={this.props.currentUser} 
+          deleteResponse={this.props.deleteResponse} />
       )
     }); 
     return (
