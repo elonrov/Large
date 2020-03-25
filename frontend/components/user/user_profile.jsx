@@ -24,19 +24,6 @@ class UserProfile extends React.Component {
             })
         })
 
-        // let editButtons;
-        // authoredStories.forEach(story => {
-        //     if (user.id === this.props.currentUser.id) {
-        //         editButtons = <div 
-        //         className="profile-story-buttons">
-        //             <button onClick={() => this.props.removeStory(story.id)}>Delete Story</button>
-        //             <button><Link to={`/stories/${story.id}/edit`}>Update Story</Link></button>
-        //         </div>
-        //     } else {
-        //         editButtons = ""
-        //     }
-        // });
-
         const profileStories = authoredStories.map((story, i) => {
             let editButtons;
             if (user.id === this.props.currentUser.id) {

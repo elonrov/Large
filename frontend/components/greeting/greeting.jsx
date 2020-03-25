@@ -8,10 +8,7 @@ const Greeting = ({currentUser, logout, openModal}) => {
             <header className="nav-1">
                 <Link to="/" className="logo"><h1 className="logo">Large</h1></Link>
                 <div className="nav-buttons">
-                    {/* <Link className="nav-1-write" to="/stories/new">Write</Link> */}
-                    {/* <button className="nav-1-signout" onClick={logout}>Sign out</button> */}
                     <button className="user-profile-icon">{currentUser.username.split("")[0]}</button>
-                    {/* <div className="arrow-up"></div> */}
                     <ul className="user-menu">
                         <li className="nav-1-username no-highlight">@{currentUser.username}</li>
                         <Link to="/stories/new"><li className="nav-1-write">New Story</li></Link>

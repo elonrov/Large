@@ -56,7 +56,6 @@ class StoryForm extends React.Component {
         } else {
             this.setState({photoUrl: "", photoFile: null});
         }
-            // this.setState({photoFile: e.currentTarget.files[0]})
     }
 
     renderErrors() {
@@ -93,7 +92,6 @@ class StoryForm extends React.Component {
                             <label className="story-form-photo-label">Upload a cover photo.<br/>
                                 <input
                                     type="file"
-                                    // className="story-form-input-photo"
                                     onChange={this.handleFile}>
                                 </input>
                             </label>

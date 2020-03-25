@@ -43,7 +43,6 @@ class StoryShow extends React.Component {
                         <img className="story-cover-photo" src={photoFile}></img>
                     </div>
                     <p>{body}</p>
-                    {/* <Link to="/">Back to Feed</Link> */}
                 </div>
                 <div className="responses-all">
                     <div className="responses-header">

@@ -76,7 +76,6 @@ class SessionForm extends React.Component {
 
         return (
             <div className="modal-background">
-                {/* <div className="invis-background" onClick={this.handleClose}> */}
                 <div className="invisible" onClick={this.handleClose}/>
                 <div className="modal-child">
                     <div style={{ backgroundImage: `url(${window.formImg})` }} className="modal-session-form">

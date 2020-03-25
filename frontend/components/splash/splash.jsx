@@ -50,7 +50,6 @@ const Splash = ({openModal}) => {
 
                 <section className="section-3">
 
-                    {/* <img className="splash-image-2" src={window.splash3} /> */}
                     <h3 className="splash-header-3">We do things differently.</h3>
                     <p className="splash-p-2">
                         Large is not like any other platform on the internet. 

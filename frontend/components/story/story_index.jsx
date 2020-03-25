@@ -76,15 +76,7 @@ class StoryIndex extends React.Component {
                 <React.Fragment key={story.id}>
                     <li className="popular-story">
                         <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
-                        {/* <div className="author-preview"> */}
                             <Link to={`users/${story.author_id}`} className="story-author"><h4>By {story.author}</h4></Link>
-                            {/* <div className="author-preview-hidden">
-                                <Link to={`users/${story.author_id}`}><h4>@story.author}</h4></Link>
-                                <p>Member at Large since 2020</p>
-                                <p>Author of  </p>
-                                <p>Follow</p>
-                            </div> */}
-                        {/* </div> */}
                         <h5 className="published-date">Feb 14, 2020 · {(Math.ceil(Math.random() * 10) + 2)} min read ★</h5>
                     </li>
                 </React.Fragment>
