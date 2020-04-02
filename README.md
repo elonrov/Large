@@ -1,6 +1,6 @@
 ![](app/assets/images/readme/header.png)
 # Large 
-Large is a clone of the story-sharing site 'Medium'. This single-page application allows users to publish their own stories, and to read and respond to others' stories. Take a look at the live version: http://www.large-aa.herokuapp.com 
+Large is a clone of the story-sharing site 'Medium'. This single-page application allows users to publish their own stories, and to read and respond to others' stories. Take a look at the live version: large-aa.herokuapp.com 
 * ![](app/assets/images/readme/splash.png)
 ## Technologies 
 Large's backend is built with Ruby on Rails for database management. The frontend is built with a React component framework, Redux for state management, and JavaScript for a smooth, single-page user experience. 
