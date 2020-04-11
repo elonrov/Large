@@ -15,6 +15,7 @@ class StoryIndex extends React.Component {
     }
 
     getDate(story) {
+        if (!story.date) return "";
         const month = story.date.split('').slice(5, 7).join('');
         let published_month;
         if (month === '01') {
