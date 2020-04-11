@@ -77,7 +77,7 @@ class StoryShow extends React.Component {
             <div>
                 <div className="story-show">
                     <h2 className="title">{title}</h2>
-                    <h4 className="subtitle">Off considerable or relatively great size, extent, or capacity.</h4>
+                    <h4 className="subtitle">Of considerable or relatively great size, extent, or capacity.</h4>
                     <div className="author">
                         <Link to={`/users/${this.props.story.author_id}`}><h4 className="show-author-name">By {authorname}</h4></Link>
                         <div className="date">{date}</div>
