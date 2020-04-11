@@ -4,7 +4,9 @@ import StoryShow from './story_show';
 
 class StoryIndex extends React.Component {
     constructor (props) {
-        super(props)
+        super(props); 
+        this.getDate = this.getDate.bind(this);
+
     }; 
 
     componentDidMount () {
@@ -12,7 +14,41 @@ class StoryIndex extends React.Component {
         window.scrollTo(0, 0);
     }
 
+    getDate(story) {
+        const month = story.date.split('').slice(5, 7).join('');
+        let published_month;
+        if (month === '01') {
+            published_month = "Jan";
+        } else if (month === '02') {
+            published_month = "Feb";
+        } else if (month === '03') {
+            published_month = "Mar";
+        } else if (month === '04') {
+            published_month = "Apr";
+        } else if (month === '05') {
+            published_month = "May";
+        } else if (month === '06') {
+            published_month = "June";
+        } else if (month === '07') {
+            published_month = "July";
+        } else if (month === '08') {
+            published_month = "Aug";
+        } else if (month === '9') {
+            published_month = "Sept";
+        } else if (month === '10') {
+            published_month = "Oct";
+        } else if (month === '11') {
+            published_month = "Nov";
+        } else if (month === '12') {
+            published_month = "Dec";
+        };
+        const published_day = story.date.split('').slice(8, 10).join('');
+
+        return published_month + " " + published_day;
+    }
+
     render () {
+
 
         let editorIndexPrimary = this.props.stories.slice(0, 2).map((story, i) => {
             const preview = story.body.slice(0, 225) + "...";
@@ -77,7 +113,7 @@ class StoryIndex extends React.Component {
                     <li className="popular-story">
                         <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
                             <Link to={`users/${story.author_id}`} className="story-author"><h4>By {story.author}</h4></Link>
-                        <h5 className="published-date">Feb 14, 2020 · {(Math.ceil(Math.random() * 10) + 2)} min read ★</h5>
+                        <h5 className="published-date">{this.getDate(story)} {(Math.ceil(Math.random() * 10) + 2)} min read ★</h5>
                     </li>
                 </React.Fragment>
             )
@@ -93,7 +129,7 @@ class StoryIndex extends React.Component {
                                 <Link className="story-title" to={`/stories/${story.id}`}>{story.title}</Link>
                                 <p className="story-preview">{preview}</p>
                                 <Link to={`users/${story.author_id}`}><h4 className="story-author">{story.author}</h4></Link>
-                                <h5 className="published-date">Feb 14, 2020 · {(Math.ceil(Math.random() * 10) + 2)} min read ★</h5>
+                                <h5 className="published-date">{this.getDate(story)} · {(Math.ceil(Math.random() * 10) + 2)} min read ★</h5>
                             </div>
                             <div className="story-thumbnail-feed">
                                 <img src={story.photo_url}></img>

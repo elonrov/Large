@@ -1,4 +1,4 @@
-json.extract! story, :id, :title, :body, :author_id
+json.extract! story, :id, :title, :body, :date, :author_id
 json.month story.created_at.month
 json.day story.created_at.day
 if story.photo.attached?

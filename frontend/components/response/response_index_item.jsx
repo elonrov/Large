@@ -30,8 +30,8 @@ const ResponseIndexItem = ({ response, currentUser, deleteResponse }) => {
   } else if (month === '12') {
     published_month = "Dec";
   }; 
-
   const published_day = response.date.split('').slice(8, 10).join('');
+
   const deleteButton = (currentUser.id === response.user_id) ? (
     <button className="response-delete-button" onClick={() => deleteResponse(response.id)}>Delete this response</button>
       ) : (
