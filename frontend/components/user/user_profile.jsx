@@ -3,12 +3,50 @@ import { Link } from 'react-router-dom';
 
 class UserProfile extends React.Component {
 
+    constructor(props) {
+        super(props); 
+        this.getDate = this.getDate.bind(this);
+    }
+
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.userId);
         this.props.fetchAllStories();
         window.scrollTo(0, 0);
     }
 
+    getDate(story) {
+        if (!story.date) return "";
+        const month = story.date.split('').slice(5, 7).join('');
+        let published_month;
+        if (month === '01') {
+            published_month = "Jan";
+        } else if (month === '02') {
+            published_month = "Feb";
+        } else if (month === '03') {
+            published_month = "Mar";
+        } else if (month === '04') {
+            published_month = "Apr";
+        } else if (month === '05') {
+            published_month = "May";
+        } else if (month === '06') {
+            published_month = "June";
+        } else if (month === '07') {
+            published_month = "July";
+        } else if (month === '08') {
+            published_month = "Aug";
+        } else if (month === '9') {
+            published_month = "Sept";
+        } else if (month === '10') {
+            published_month = "Oct";
+        } else if (month === '11') {
+            published_month = "Nov";
+        } else if (month === '12') {
+            published_month = "Dec";
+        };
+        const published_day = story.date.split('').slice(8, 10).join('');
+
+        return "Published on " + published_month + " " + published_day;
+    }
     render () {
         
         const user = this.props.user;
@@ -39,7 +77,7 @@ class UserProfile extends React.Component {
             return (
                 <div className="user-profile-story" key={`${i}`}>
                     <Link className="profile-story-title" to={`/stories/${story.id}`}>{story.title}</Link>
-                    <p className="profile-story-date profile-user-details">Published on Feb 14, 2020</p>
+                    <p className="profile-story-date profile-user-details">{this.getDate(story)}</p>
                     <div className="profile-story-cover-container">
                         <img className="profile-story-cover-photo" src={story.photo_url}></img>
                     </div>
