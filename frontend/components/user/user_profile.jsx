@@ -29,8 +29,8 @@ class UserProfile extends React.Component {
             if (user.id === this.props.currentUser.id) {
                 editButtons = <div
                     className="profile-story-buttons">
-                    <button><Link to={`/stories/${story.id}/edit`}>Update Story</Link></button>
-                    <button onClick={() => this.props.removeStory(story.id)}>Delete Story</button>
+                    <button className="update-story-button"><Link to={`/stories/${story.id}/edit`}>Update Story</Link></button>
+                    <button className="delete-story-button" onClick={() => this.props.removeStory(story.id)}>Delete Story</button>
                 </div>
             } else {
                 editButtons = ""

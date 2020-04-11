@@ -61,7 +61,7 @@
     justify-content: center; 
 }
 
-.profile-story-buttons button {
+.update-story-button {
     margin: 10px;
     width: 140px; 
     border: none; 
@@ -71,6 +71,18 @@
     font-family: 'Merriweather Sans', sans-serif;
     color: white; 
     background-color: #3aab78;
+}
+
+.delete-story-button {
+    margin: 10px;
+    width: 140px; 
+    border: 1px solid rgb(214, 91, 91);
+    padding: 10px; 
+    font-size: 15px;
+    border-radius: 4px; 
+    font-family: 'Merriweather Sans', sans-serif;
+    color: rgb(134, 103, 103);
+    background-color: #f2f3f2;
 }
 
 a {
@@ -89,3 +101,4 @@ a {
     width: 50%;
     padding: 10px;
 }
+
