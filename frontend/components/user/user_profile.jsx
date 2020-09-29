@@ -34,7 +34,7 @@ class UserProfile extends React.Component {
             published_month = "July";
         } else if (month === '08') {
             published_month = "Aug";
-        } else if (month === '9') {
+        } else if (month === '09') {
             published_month = "Sept";
         } else if (month === '10') {
             published_month = "Oct";
